@@ -1,5 +1,5 @@
 ---
-title: About
+title: Testing title
 image: profile.jpg
 about:
   template: jolla
