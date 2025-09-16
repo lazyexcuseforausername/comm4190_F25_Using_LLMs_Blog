@@ -1,5 +1,5 @@
 ---
-title: Testing title
+title: Index
 listing:
   contents: posts
   sort: date desc
