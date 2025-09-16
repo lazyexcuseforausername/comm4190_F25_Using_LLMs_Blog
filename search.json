@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Testing title",
+    "title": "Index",
     "section": "",
-    "text": "Prompting for medical knowledge\n\n\n\nLLMs\n\nMedical Knowledge\n\n\n\nHow do you get LLMs to give accurate medical responses\n\n\n\n\n\nFeb 18, 2025\n\n\nEmma\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nLLMs\n\nprompting\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nFeb 2, 2024\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
+    "text": "Can Chat Be My Discount Therapist? Part one\n\n\n\nLLMs\n\nSocial\n\nPsychology\n\n\n\nCan an LLMs properly provide cognitive behaviioral therapy to those who might not be able to access it through professionals? Let’s find out\n\n\n\n\n\nSep 16, 2025\n\n\nEleni\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducing Eleni\n\n\n\nLLMs\n\nSocial\n\nTesting\n\n\n\nWho I am and why I’m here\n\n\n\n\n\nSep 3, 2025\n\n\nEleni\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nLLMs\n\nprompting\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nFeb 2, 2024\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/000_test_post/index.html",
@@ -21,10 +21,45 @@
     "text": "Read the following and see if you can answer the question:\n\n\nThere are three boxes in a stack. A pink one, a purple one and a green one. The pink one is in the middle of the stack with the purple below it. What is the color of the box on the bottom of the stack?\n\nMost likely you answered purple…\nBut it is possible you first said green (don’t worry if you did it is quite a common response!)\n\n\nIt’s a verbal visual problem that requires some deliberation and most likely for us to create a visual image of a stack of boxes as a reasoning aid.\nNotice also the complexity of the language used in the prompt to describe the scene. The use of natural language as opposed to a formal/logical calculus does hold the potential for ambiguity (multiple interpretations) and inexactness. However, it is the most normal/natural, efficient and broadly accessible way of communicating such information.\nNotice 1. The use of anaphor or reference. - Three BOXES -&gt; a pink/purple/green ONE as opposed to a pink box, a purple box and a green box. - The PINK ONE is in the middle ... the purple {BOX} below IT {the pink box}\nWe tend to try and avoid this kind of repetition to make our speech more coherent.\n\nAlthough the description in language may not be entirely concise, there is no real ambiguity as to how the boxes can be arranged. It must be: | Box | Stack position | | — | — | | GREEN | top | | PINK | middle | | PURPLE | bottom |\n\n\n\n\nGPT3.5 Turbo\n\nHad some difficulties and answered green\nLlama2 (chat 7B version)\n\n\nAnswered correctly (purple) and used some so-called chain-of-thought reasoning\n\nBing Chat (MS Co-pilot)\nThis LLM is GPT4 with some Microsoft specific tuning and RAG (search) additions.\nIt get’s it correct:\n\nThe color of the box on the bottom of the stack is purple. This is because the purple box is below the pink one, which is in the middle of the stack. Therefore, the purple box must be the lowest one. 🟪\n\nBut when you follow up and ask it to create visual representation of the box arrangement\n\nPROMPT: Can you create a visual representation of how the boxes are arranged?\n\nIt responds\n\nRESPONSE: Sure, I’ll try to create that. Here is a visual representation of how the boxes are arranged:\n\nAnd uses DALL-E3 to create 4 different attempts at a visual representation:\n\nNONE OF WHICH ARE CORRECT!!!"
   },
   {
+    "objectID": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html",
+    "href": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html",
+    "title": "Can Chat Be My Discount Therapist? Part one",
+    "section": "",
+    "text": "This past summer, I interned at an insurance company that serves Medicaid clients. During my time there, The Big Beautiful Bill was passed. Haven’t heard of it? No worries—I’ll give you the cliff notes. Don’t quote me, but roughly 12 million Americans are projected to lose insurance coverage by 2035. That’s a LOT of people.\nWhich brings me to my question: can LLMs help cushion the mental health impact of this loss? Obviously, an LLM can’t take your blood pressure or check your height and weight at a doctor’s office. But could it step in as a supportive listener? Could it provide coping strategies, empathetic language, or even just the feeling of being heard when traditional care is harder to access? Stick around while we unpack this over a series of blogs.\n\nOf course, LLMs are not licensed therapists and shouldn’t replace professional care. Still, their ability to mimic supportive dialogue could be helpful for some issues. But hey, let’s stop theorizing and start testing.\n\n\n\nFor this experiment, I talked with ChatGPT-40-latest on our Open WebUI. I didn’t give it any context before my initial message because I don’t think the average person would think to do such in the moment. I wanted this interaction to be as raw and authentic as possible to have a solid base understanding for how it would react to someone in actual emotional distress. Let us look at how it responded:\n\n\n\n\nWhen I told Chat that I was feeling overwhelmed and hopeless about classes and work, the response was empathetic and supportive. It began by validating my feelings (“it’s completely valid to feel overwhelmed”) and then reassured me that I wasn’t alone. This kind of language mirrors human counseling techniques by normalizing emotions and reducing isolation.\nNext, the model asked me for more details about my situation. This is important because it shifts the conversation from a one-way answer into a two-way dialogue, similar to how a therapist might probe gently before giving advice (it also just feels quite human). The suggestions offered (breaking tasks into smaller steps, mapping out a schedule) were practical and manageable. The response also emphasized kindness toward oneself, which reflects common mental health guidance.\nThe follow-up options were especially interesting: they encouraged me to pick the direction of the conversation, whether it was setting boundaries, handling deadlines, or reducing anxiety. This made the interaction feel more personalized and user-driven, which is critical in supportive communication. However, I feel that these follow-up options are a double edged sword. Sure, they could act as starting points to unpack root causes of issues, but I worry that having to make this decisiion could overwhelm the user more than they already are.\n\n\n\n\nThe test shows that LLMs can provide comforting, empathetic language and even suggest coping strategies that might help someone feel less alone. While they can’t replace professional therapy or medical care, their conversational style can reduce stress in the moment and encourage reflection. In other words, LLMs can act as a soft cushion for mental health—not a solution, but there is more testing and research to be done to fully understand the LLMs’ limits"
+  },
+  {
+    "objectID": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html#testing-it-out",
+    "href": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html#testing-it-out",
+    "title": "Can Chat Be My Discount Therapist? Part one",
+    "section": "",
+    "text": "For this experiment, I talked with ChatGPT-40-latest on our Open WebUI. I didn’t give it any context before my initial message because I don’t think the average person would think to do such in the moment. I wanted this interaction to be as raw and authentic as possible to have a solid base understanding for how it would react to someone in actual emotional distress. Let us look at how it responded:"
+  },
+  {
+    "objectID": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html#analysis-of-the-test",
+    "href": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html#analysis-of-the-test",
+    "title": "Can Chat Be My Discount Therapist? Part one",
+    "section": "",
+    "text": "When I told Chat that I was feeling overwhelmed and hopeless about classes and work, the response was empathetic and supportive. It began by validating my feelings (“it’s completely valid to feel overwhelmed”) and then reassured me that I wasn’t alone. This kind of language mirrors human counseling techniques by normalizing emotions and reducing isolation.\nNext, the model asked me for more details about my situation. This is important because it shifts the conversation from a one-way answer into a two-way dialogue, similar to how a therapist might probe gently before giving advice (it also just feels quite human). The suggestions offered (breaking tasks into smaller steps, mapping out a schedule) were practical and manageable. The response also emphasized kindness toward oneself, which reflects common mental health guidance.\nThe follow-up options were especially interesting: they encouraged me to pick the direction of the conversation, whether it was setting boundaries, handling deadlines, or reducing anxiety. This made the interaction feel more personalized and user-driven, which is critical in supportive communication. However, I feel that these follow-up options are a double edged sword. Sure, they could act as starting points to unpack root causes of issues, but I worry that having to make this decisiion could overwhelm the user more than they already are."
+  },
+  {
+    "objectID": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html#conclusion",
+    "href": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html#conclusion",
+    "title": "Can Chat Be My Discount Therapist? Part one",
+    "section": "",
+    "text": "The test shows that LLMs can provide comforting, empathetic language and even suggest coping strategies that might help someone feel less alone. While they can’t replace professional therapy or medical care, their conversational style can reduce stress in the moment and encourage reflection. In other words, LLMs can act as a soft cushion for mental health—not a solution, but there is more testing and research to be done to fully understand the LLMs’ limits"
+  },
+  {
+    "objectID": "posts/002_Test_post_personal/My_Frst_Post.html",
+    "href": "posts/002_Test_post_personal/My_Frst_Post.html",
+    "title": "Introducing Eleni",
+    "section": "",
+    "text": "Hi Everyone! Here’s a little bit about me - Favorite snack: Chips & Salsa - Major: Economics\n\n\n\nHeadshot"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Testing title",
+    "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "Welcome to my blog where I’m exploring LLMs! I’m really not a computers person so this will be quite the journey. Hope you stick around."
   }
 ]
