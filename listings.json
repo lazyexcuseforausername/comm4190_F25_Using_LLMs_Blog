@@ -2,8 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/006_DyingDataSci/datsci.html",
+      "/posts/005_Wolfram/wolfram.html",
+      "/posts/004_politeness/Politeness.html",
       "/posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html",
-      "/posts/002_Test_post_personal/My_Frst_Post.html",
       "/posts/000_test_post/index.html"
     ]
   }

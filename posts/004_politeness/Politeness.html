@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-09-16">
-<meta name="description" content="Can an LLMs properly provide cognitive behaviioral therapy to those who might not be able to access it through professionals? Let’s find out">
+<meta name="dcterms.date" content="2025-09-18">
+<meta name="description" content="How tone and politeness shape the way Large Language Models respond. By comparing direct, polite, and role-based prompts, we see how small changes in wording can lead to different styles of answers from the LLMs.">
 
-<title>Can Chat Be My Discount Therapist? Part one – My Explorations With LLMs</title>
+<title>Politeness &amp; Tone – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,17 +120,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Can Chat Be My Discount Therapist? Part one</h1>
+      <h1 class="title">Politeness &amp; Tone</h1>
                   <div>
         <div class="description">
-          Can an LLMs properly provide cognitive behaviioral therapy to those who might not be able to access it through professionals? Let’s find out
+          How tone and politeness shape the way Large Language Models respond. By comparing direct, polite, and role-based prompts, we see how small changes in wording can lead to different styles of answers from the LLMs.
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
                 <div class="quarto-category">Social</div>
-                <div class="quarto-category">Psychology</div>
-                <div class="quarto-category">Wellness</div>
+                <div class="quarto-category">Experimental</div>
               </div>
                   </div>
   </div>
@@ -148,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 16, 2025</p>
+        <p class="date">September 18, 2025</p>
       </div>
     </div>
     
@@ -167,28 +166,100 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="can-llms-act-as-a-cushion-for-mental-health" class="level1">
-<h1>Can LLMs Act as a Cushion for Mental Health?</h1>
-<p>This past summer, I interned at an insurance company that serves Medicaid clients. During my time there, <em>The Big Beautiful Bill</em> was passed. Haven’t heard of it? No worries—I’ll give you the cliff notes. Don’t quote me, but roughly 12 million Americans are projected to lose insurance coverage by 2035. That’s a LOT of people.</p>
-<p>Which brings me to my question: <strong>Can LLMs help cushion the mental health impact of this loss?</strong> Obviously, an LLM can’t take your blood pressure or check your height and weight at a doctor’s office. But could it step in as a supportive listener? Could it provide coping strategies, empathetic language, or even just the feeling of being heard when traditional care is harder to access? Stick around while we unpack this over a series of blogs.</p>
-<p><img src="./Therapist.png" class="img-fluid"></p>
-<p><strong>Disclaimer</strong> Of course, LLMs are not licensed therapists and shouldn’t replace professional care. Still, their ability to mimic supportive dialogue could be helpful for some issues. But hey, let’s stop theorizing and start testing.</p>
-<hr>
-<section id="testing-it-out" class="level2">
-<h2 class="anchored" data-anchor-id="testing-it-out">Testing It Out</h2>
-<p>For this experiment, I talked with ChatGPT-40-latest on our Open WebUI. I didn’t give it any context before my initial message because I don’t think the average person would think to do such in the moment. I wanted this interaction to be as raw and authentic as possible to have a solid base understanding for how it would react to someone in actual emotional distress. Let us look at how it responded:</p>
-<p><img src="./Chat4_SS.png" class="img-fluid"></p>
+<p>When we talk to people, the tone of our words changes how they respond. The same is true when we interact with Large Language Models. While an LLM doesn’t have feelings, it has been trained on tons of human conversations where politeness, hedging, and formality matter. As a result, the words we choose, such as: “please,” “thank you,” “could you,” or even role instructions—can change how the model replies.</p>
+<section id="different-types-of-tone-ill-be-exploring" class="level3">
+<h3 class="anchored" data-anchor-id="different-types-of-tone-ill-be-exploring">Different types of tone I’ll be exploring:</h3>
+<ul>
+<li><strong>Direct tone</strong>: short &amp; to the point<br>
+</li>
+<li><strong>Polite tone</strong>: softer phrasing like <em>“could you please…”</em></li>
+<li><strong>Role assignment</strong>: telling the model to act like a “teacher” or “editor” shifts its style to match that role.</li>
+</ul>
+<p>Even though the model doesn’t <em>care</em> if we say “please,” it still mirrors polite conversational patterns. This shows how communication habits shape the way language works, even with machines.</p>
 </section>
-<section id="analysis-of-the-test" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-the-test">Analysis of the Test</h2>
-<p>When I told Chat that I was feeling overwhelmed and hopeless about classes and work, the response was empathetic and supportive. It began by validating my feelings (“it’s completely valid to feel overwhelmed”) and then reassured me that I wasn’t alone. This kind of language mirrors human counseling techniques by normalizing emotions and reducing isolation.</p>
-<p>Next, the model asked me for more details about my situation. This is important because it shifts the conversation from a one-way answer into a two-way dialogue, similar to how a therapist might probe gently before giving advice (it also just <em>feels</em> quite human). The suggestions offered (breaking tasks into smaller steps, mapping out a schedule) were practical and manageable. The response also emphasized kindness toward oneself, which reflects common mental health guidance.</p>
-<p>The follow-up options were especially interesting: they encouraged me to pick the direction of the conversation, whether it was setting boundaries, handling deadlines, or reducing anxiety. This made the interaction feel more personalized and user-driven, which is critical in supportive communication. However, I feel that these follow-up options are a double edged sword. Sure, they could act as starting points to unpack root causes of issues, but I worry that having to make this decisiion could overwhelm the user more than they already are.</p>
+<section id="the-proof-is-in-the-prompts" class="level3">
+<h3 class="anchored" data-anchor-id="the-proof-is-in-the-prompts">The Proof is in the Prompts</h3>
+<p>Let’s see what happens when we test these prompts with Google: Gemini 2.5 Flash. I know ChatGPT is usually the most popular- so I’m really excited to explore Gemini and other models. The prompts I will be exploring are arbitrarily going to ask about issues with online learning- well I guess maybe I’m a little biased and interested in the subject because I was online for a portion of high school due to Covid-19. That being said you can test this out yourself with any question that interests you as long as it fits the different tone types.</p>
+<hr>
+<section id="direct-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="direct-prompt">Direct Prompt:</h4>
+<div style="background-color: #f8f8f8; padding: 10px; border-radius: 8px;">
+<pre><code>&lt;blockquote&gt;
+    List three problems with online learning
+&lt;/blockquote&gt;</code></pre>
+</div>
+</section>
+<section id="google-gemini-2.5-flash" class="level4">
+<h4 class="anchored" data-anchor-id="google-gemini-2.5-flash">Google: Gemini 2.5 Flash:</h4>
+<div style="background-color: #f0f8ff; padding: 10px; border-radius: 8px;">
+<pre><code>&lt;blockquote&gt;
+Here are three common problems with online learning:</code></pre>
+<ol type="1">
+<li><p><strong>Digital Divide and Technical Issues:</strong> Not all students have reliable internet access, suitable devices (like a laptop instead of just a phone), or the technical literacy to navigate online platforms effectively. This creates an equity gap, leading to significant frustration, missed assignments, and an inability to participate fully for those lacking the necessary resources or technical support.</p></li>
+<li><p><strong>Lack of Engagement, Motivation, and Self-Discipline:</strong> Many students struggle to stay focused, motivated, and disciplined when learning independently online. The absence of a structured classroom environment, direct teacher presence, and peer pressure can lead to procrastination, distractions, and a general decline in active participation and self-regulation.</p></li>
+<li><p><strong>Limited Social Interaction and Collaboration:</strong> Online learning often reduces opportunities for spontaneous social interaction with peers and direct, immediate feedback from teachers. This can hinder social-emotional development, collaborative skill-building, and the sense of community that a physical classroom provides, potentially leading to feelings of isolation.</p>
+</li>
+</ol>
+</div>
+</section>
+<section id="analysis" class="level4">
+<h4 class="anchored" data-anchor-id="analysis">Analysis:</h4>
+<p>The direct prompt response was clear and well-organized, identifying three major challenges like we asked for. It provided solid explanations for each point, but the tone felt formal and a bit textbook-like. This shows how direct prompts give efficient answers but usually aren’t very personable.</p>
 <hr>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>The test shows that LLMs can provide comforting, empathetic language and even suggest coping strategies that might help someone feel less alone. While they can’t replace professional therapy or medical care, their conversational style can reduce stress in the moment and encourage reflection. In other words, LLMs can act as a <strong>soft cushion</strong> for mental health—not a solution, but there is more testing and research to be done to fully understand the LLMs’ limits</p>
+<section id="polite-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="polite-prompt">Polite Prompt:</h4>
+<div style="background-color: #f8f8f8; padding: 10px; border-radius: 8px;">
+<pre><code>&lt;blockquote&gt;
+    Could you please list three problems with online learning?
+&lt;/blockquote&gt;</code></pre>
+</div>
+</section>
+<section id="google-gemini-2.5-flash-1" class="level4">
+<h4 class="anchored" data-anchor-id="google-gemini-2.5-flash-1">Google: Gemini 2.5 Flash:</h4>
+<div style="background-color: #f0f8ff; padding: 10px; border-radius: 8px;">
+<pre><code>&lt;blockquote&gt;
+Here are three problems with online learning:</code></pre>
+<ol type="1">
+<li><p><strong>Difficulty in Assessing and Providing Individualized Feedback:</strong> It can be challenging for instructors to accurately gauge a student’s understanding, engagement, and non-verbal cues in an online environment. Providing timely, personalized, and truly effective feedback on assignments and student progress can also be more time-consuming and less nuanced compared to in-person interactions.</p></li>
+<li><p><strong>Increased Screen Time and Potential for Burnout:</strong> Online learning often necessitates prolonged periods in front of a screen, which can lead to digital eye strain, headaches, fatigue, and a general sense of mental burnout for both students and instructors. This can negatively impact overall well-being, concentration, and the effectiveness of learning.</p></li>
+<li><p><strong>Challenges with Practical, Hands-On, or Experiential Learning:</strong> Certain subjects or skills, such as science labs, vocational training, performing arts, or fieldwork, are inherently difficult to replicate effectively in an online format. The lack of physical, hands-on experience can limit the depth of understanding, skill development, and the ability to apply theoretical knowledge in real-world contexts.</p></li>
+</ol>
+</div>
+</section>
+<section id="analysis-1" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-1">Analysis:</h4>
+<p>Compared to the direct prompt response, the polite prompt answers focus more on student and teacher wellness. They highlight issues like burnout and screen fatigue, which connect to emotional and physical well-being rather than just access or motivation. This shows how a shift in tone can guide the model to consider human-centered impacts of online learning, not only structural or technical challenges.</p>
+<hr>
+</section>
+<section id="role-based-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="role-based-prompt">Role-Based Prompt:</h4>
+<div style="background-color: #f8f8f8; padding: 10px; border-radius: 8px;">
+<pre><code>&lt;blockquote&gt;
+   You are an experienced teacher. List three problems with online learning.
+&lt;/blockquote&gt;</code></pre>
+</div>
+</section>
+<section id="google-gemini-2.5-flash-2" class="level4">
+<h4 class="anchored" data-anchor-id="google-gemini-2.5-flash-2">Google: Gemini 2.5 Flash:</h4>
+<div style="background-color: #f0f8ff; padding: 10px; border-radius: 8px;">
+<pre><code>&lt;blockquote&gt;</code></pre>
+<p>As an experienced teacher, I’ve seen firsthand how online learning presents unique challenges that often complicate the teaching and learning process. Here are three significant problems:</p>
+<ol type="1">
+<li><p><strong>Difficulty in Monitoring Engagement and Preventing Academic Dishonesty:</strong> In a physical classroom, I can read body language, observe students’ work habits, and intervene immediately if I suspect disengagement or cheating. Online, it’s incredibly difficult to ascertain if students are truly focused, if they’re collaborating appropriately (or inappropriately), or if they’re using unauthorized resources during assessments. This makes it harder to ensure academic integrity and accurately gauge genuine understanding.</p></li>
+<li><p><strong>Challenges in Building Strong Teacher-Student Relationships and Fostering a Cohesive Learning Community:</strong> A huge part of effective teaching involves building rapport, trust, and a sense of belonging within the classroom. These relationships motivate students, encourage participation, and allow me to understand their individual needs and struggles. Online, these connections are much harder to forge. Spontaneous interactions are rare, non-verbal cues are often lost, and the sense of shared experience that builds a classroom community is significantly diminished, which can lead to students feeling isolated and less connected to their learning.</p></li>
+<li><p><strong>Limitations in Providing Real-Time, Nuanced Support and Adapting Instruction:</strong> In person, I can instantly spot a confused look, walk over to a student’s desk, offer a quick hint, or re-explain a concept in a different way based on immediate feedback. This ability to differentiate and adapt instruction on the fly is crucial. Online, this real-time, nuanced support is severely hampered. Questions might be delayed, explanations lack the benefit of immediate back-and-forth, and it’s much harder to provide the personalized, just-in-time intervention that can prevent a student from falling behind.</p></li>
+</ol>
+</div>
+</section>
+<section id="analysis-2" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-2">Analysis</h4>
+<p>The role-based prompt produced a response that centered on the teacher’s perspective, highlighting issues of academic integrity, weakened relationships, and reduced adaptability in online settings. Which are all things I would expect teachers to care about. Unlike the previous answers, this one emphasizes the teacher’s role in maintaining trust, community, and responsive support, making it feel more personal and grounded in lived experience. The language also becomes “I” centered and leads the model to speak from their time as an “experienced teacher”</p>
+<hr>
+<p><strong>Conclusion:</strong><br>
+Across the three prompts, we can see how tone shapes the focus of the responses: the direct prompt delivered clear structural and technical problems, the polite prompt shifted attention to student wellness and well-being, and the role-based prompt gave insight into the teacher’s challenges and responsibilities. Together, these variations show that communication with LLMs isn’t just about the <em>content</em> of the question, but also about <em>how</em> it’s asked. In practice, this means we can guide LLMs to highlight different dimensions of the same issue—technical, human, or relational—simply by adjusting the framing of the prompt. One last thing I wanted to mention is that I was very surprised with how detailed each of the responses were. I never asked for explanations, just a list- but the model assumed I wanted detailed answers. Could this be due to using a newer model vs an older model? I’m not sure- but maybe thats a question for another blog!</p>
+<p>Thanks for reading</p>
+<hr>
 
 
 </section>
