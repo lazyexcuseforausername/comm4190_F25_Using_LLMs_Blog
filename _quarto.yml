@@ -7,9 +7,9 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/lazyexcuseforausername
+      - icon: linkedin
+        href: https://www.linkedin.com/in/elenikan/
 format:
   html:
     theme: vapor

@@ -5,4 +5,4 @@ about:
   template: jolla
 ---
 
-Welcome to my blog where I'm exploring LLMs! I'm really not a computers person so this will be quite the journey. Hope you stick around. 
+Welcome to my blog where I'm exploring LLMs! Im a third year studying economics and data science at UPenn. My interrests include decision making & processes, baking, and embroidery. I'm really not a computers person so this blog will be quite the journey. I hope you stick around :)

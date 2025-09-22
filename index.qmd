@@ -1,5 +1,5 @@
 ---
-title: Index
+title: Exploring LLMs with Eleni
 listing:
   contents: posts
   sort: date desc
