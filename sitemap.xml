@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2025-09-22T17:34:26.060Z</lastmod>
+    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/about.html</loc>
+    <lastmod>2025-10-07T23:18:55.096Z</lastmod>
   </url>
   <url>
-    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/000_test_post/index.html</loc>
-    <lastmod>2025-09-22T17:34:26.061Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html</loc>
-    <lastmod>2025-09-22T17:34:26.064Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/004_politeness/Politeness.html</loc>
-    <lastmod>2025-09-22T17:34:26.064Z</lastmod>
+    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/008_Doctor/Doctor.html</loc>
+    <lastmod>2025-10-07T23:18:55.101Z</lastmod>
   </url>
   <url>
     <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/006_DyingDataSci/datsci.html</loc>
-    <lastmod>2025-09-22T17:34:26.064Z</lastmod>
+    <lastmod>2025-10-07T23:18:55.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html</loc>
+    <lastmod>2025-10-07T23:18:55.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/index.html</loc>
+    <lastmod>2025-10-07T23:18:55.096Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/004_politeness/Politeness.html</loc>
+    <lastmod>2025-10-07T23:18:55.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/009_lyric_prank/lyricprank.html</loc>
+    <lastmod>2025-10-07T23:18:55.103Z</lastmod>
   </url>
   <url>
     <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/005_Wolfram/wolfram.html</loc>
-    <lastmod>2025-09-22T17:34:26.064Z</lastmod>
+    <lastmod>2025-10-07T23:18:55.099Z</lastmod>
   </url>
   <url>
-    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2025-09-22T17:34:26.060Z</lastmod>
+    <loc>https://lazyexcuseforausername.github.io/comm4190_F25_Using_LLMs_Blog/posts/007_Creativity/Creativity.html</loc>
+    <lastmod>2025-10-07T23:18:55.099Z</lastmod>
   </url>
 </urlset>

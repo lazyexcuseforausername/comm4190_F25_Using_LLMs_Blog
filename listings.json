@@ -2,11 +2,13 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/009_lyric_prank/lyricprank.html",
+      "/posts/008_Doctor/Doctor.html",
+      "/posts/007_Creativity/Creativity.html",
       "/posts/006_DyingDataSci/datsci.html",
       "/posts/005_Wolfram/wolfram.html",
       "/posts/004_politeness/Politeness.html",
-      "/posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html",
-      "/posts/000_test_post/index.html"
+      "/posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html"
     ]
   }
 ]
