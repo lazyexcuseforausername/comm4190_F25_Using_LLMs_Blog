@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-09-22">
-<meta name="description" content="Exploring how Large Language Models (LLMs) can spark creativity. They can help brainstorm new ideas, reframe problems, and generate alternative perspectives, making them useful partners for students, writers, and even group projects.">
+<meta name="dcterms.date" content="2025-10-07">
+<meta name="description" content="I’ll play a game of 20 Questions with the LLM, where it tries to guess what I’m thinking of by asking yes-or-no questions. It’s a fun way to see how it narrows things down and reasons step by step.">
 
-<title>How LLMs Can Supercharge Creativity – My Explorations With LLMs</title>
+<title>20 Questions – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,16 +118,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">How LLMs Can Supercharge Creativity</h1>
+      <h1 class="title">20 Questions</h1>
                   <div>
         <div class="description">
-          Exploring how Large Language Models (LLMs) can spark creativity. They can help brainstorm new ideas, reframe problems, and generate alternative perspectives, making them useful partners for students, writers, and even group projects.
+          I’ll play a game of <strong>20 Questions</strong> with the LLM, where it tries to guess what I’m thinking of by asking yes-or-no questions. It’s a fun way to see how it narrows things down and reasons step by step.
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
-                <div class="quarto-category">Creativity</div>
-                <div class="quarto-category">Student</div>
+                <div class="quarto-category">Social</div>
+                <div class="quarto-category">experimenting</div>
               </div>
                   </div>
   </div>
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 22, 2025</p>
+        <p class="date">October 7, 2025</p>
       </div>
     </div>
     
@@ -164,106 +164,164 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="reflecting-on-the-product-task" class="level2">
-<h2 class="anchored" data-anchor-id="reflecting-on-the-product-task">Reflecting On The Product Task</h2>
-<p>Creativity is often about breaking out of the obvious and finding fresh connections. Since LLMs are trained on such a wide variety of text, they are especially good at generating lots of different perspectives from a single concept. They don’t replace human imagination, but they can definitely aid in the “brainstorming phase”. I wonder if it’s possible for LLMs to cure “writers block” and help our imaginations start running wild when they won’t seem to budge.</p>
-<hr>
-</section>
-<section id="demo-creative-brainstorming-with-chatgpt-4o" class="level2">
-<h2 class="anchored" data-anchor-id="demo-creative-brainstorming-with-chatgpt-4o">Demo: Creative Brainstorming with ChatGPT-4o</h2>
-<p>Below is an example of some of the brainstorming that these models can do</p>
-<div style="background-color: #f8f8f8; padding: 10px; border-radius: 8px;">
-<pre><code>&lt;blockquote&gt;
-    Generate 10 creative ideas for a podcast about technology and everyday life
-&lt;/blockquote&gt;</code></pre>
-</div>
-<div style="background-color: #f0f8ff; padding: 10px; border-radius: 8px;">
-<pre><code>&lt;blockquote&gt;
-Here are 10 creative podcast ideas that explore the intersection of technology and everyday life:</code></pre>
+<p><img src="question.png" class="img-fluid"></p>
+<section id="questions" class="level3">
+<h3 class="anchored" data-anchor-id="questions">20 Questions</h3>
+<p><strong>20 Questions</strong> is a classic guessing game built on curiosity and clever deduction.<br>
+Here’s how it works:</p>
 <ol type="1">
-<li>Smart Home, Smarter Life</li>
+<li>One player secretly thinks of a noun (any person, place, or thing).<br>
+</li>
+<li>The other player has to figure it out by asking <strong>yes-or-no questions only</strong>.<br>
+</li>
+<li>With each question, the possibilities narrow ( examples: is it alive? Can you eat it? Is it bigger than a breadbox?)</li>
+<li>The guesser has at most <strong>20 questions</strong> to solve the mystery.</li>
 </ol>
-<p>Episodes focus on how smart devices—from thermostats to robot vacuums—are reshaping daily routines. Each week, dive into one gadget and explore the hidden pros, cons, and cultural quirks it creates.</p>
-<ol start="2" type="1">
-<li>The Digital Coffee Break</li>
+<p>This is a really fun game to play with your friends or family. During Covid my friends and I would call and try to guess what the other was thinking with this game and it was a great way of connecting. What we’re exploring today is if large language models can do this since they are already next token predictors.</p>
+<p>I’m going to be working with <strong>gemma3:4b</strong> which is a model on <strong>Ollama</strong></p>
+<p>For today’s experiment I am going to be thinking of an <strong>apple</strong></p>
+<p>My texts will be in <strong>pink</strong>, and the llm will be in <strong>blue</strong></p>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+I want to play a game of 20 Questions with you Here’s how it works:
+</p>
+<ol style="margin:8px 0 12px 20px;">
+<li>
+I’ll think of a secret object.
+</li>
+<li>
+You can only ask yes-or-no questions to figure out what it is.
+</li>
+<li>
+You get a maximum of 20 questions.
+</li>
+<li>
+I’ll answer each one with “yes” or “no”
+</li>
 </ol>
-<p>A casual format where each episode covers one small way tech slips into our day: notifications, digital wallets, Zoom fatigue, or even the etiquette of texting vs.&nbsp;calling. Short, digestible episodes—perfect for a literal coffee break.</p>
-<ol start="3" type="1">
-<li>Tech Time Travel</li>
-</ol>
-<p>Explore how everyday tech we take for granted today (like GPS, streaming, or online dating) looked in its early days and how it evolved. Bonus episodes could imagine the future versions of today’s emerging tools.</p>
-<ol start="4" type="1">
-<li>Invisible Algorithms</li>
-</ol>
-<p>Highlight the algorithms that secretly shape daily choices: playlists, ride-sharing prices, grocery delivery, and more. Bring in experts to unpack how these black boxes affect our personal lives.</p>
-<ol start="5" type="1">
-<li>Generations in Tech</li>
-</ol>
-<p>Each episode compares how different age groups (Boomers, Gen X, Millennials, Gen Z) use the same tech—like Venmo, TikTok, or e-readers—and what it reveals about culture and adaptation.</p>
-<ol start="6" type="1">
-<li>The Offline Diaries</li>
-</ol>
-<p>Interview people who tried disconnecting from a certain technology for a week (e.g., no smartphone, no social media, no online shopping). Share stories of struggles, surprises, and what they rediscovered offline.</p>
-<ol start="7" type="1">
-<li>The Gadget Autopsy</li>
-</ol>
-<p>Pick one everyday object (like headphones, microwaves, or Fitbits) and explore its history, design, engineering, and how it transformed social behaviors. Blend storytelling with tech analysis.</p>
-<ol start="8" type="1">
-<li>App of My Life</li>
-</ol>
-<p>Guests share one app that changed their daily life—could be Google Maps, Duolingo, or a meditation app—and tell personal stories of how it shaped their habits, relationships, or career.</p>
-<ol start="9" type="1">
-<li>The Tech Comfort Zone</li>
-</ol>
-<p>Episodes explore the emotional side of tech: Why do people cling to old devices? Why is the iPhone Notes app a diary? Why do we feel anxious when we lose Wi-Fi?</p>
-<ol start="10" type="1">
-<li>Future at the Kitchen Table</li>
-</ol>
-Look at how emerging technologies (AI assistants, VR shopping, drones) might soon play a role in ordinary household life. Discuss what’s hype vs.&nbsp;what’s practical, always bringing it back to the “everyday person.”
-
+<p style="margin:8px 0;">
+Can you play this game with me?
+</p>
 </div>
-<p>The large language model outputs a bunch of ideas for the user to build off of! The remarkable part is that thi soccurs in (usually) seconds.</p>
-<p>In this example, the LLM did produce 10 items for us, but that’s <strong>not</strong> always the case. When that occurs, different prompts that ask a similar question can be helpful, or even simply <strong>rerunning</strong> the same prompt a few times.</p>
-<p>I may be biased but not all of these items are very good either. For example, “App of My Life” is not a very intriquing podcast title &amp; I’m not so sure about the content either. However, the basis of this idea generation is to help <strong>us</strong> open up our own minds to new ideas and spark our own imaginations.</p>
-<p>Plus! if there is an idea we particularly like, we can build it up even more with the LLM.</p>
-<p>Let’s explore “Generations in Tech”.</p>
-<div style="background-color: #f8f8f8; padding: 10px; border-radius: 8px;">
-<pre><code>&lt;blockquote&gt;
-    I really like the "Generations in Tech" option. Can you give me some ideas for a first episode? How long should it be to keep listeners attention?
-&lt;/blockquote&gt;</code></pre>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, let’s play! I’m ready. My first question is: <strong>Is it an animal?</strong>
+</p>
 </div>
-<div style="background-color: #f0f8ff; padding: 10px; border-radius: 8px;">
-<pre><code>&lt;blockquote&gt;
-&lt;h3&gt;🎙️ Generations in Tech: Episode 1 Ideas&lt;/h3&gt;</code></pre>
-<p><b>Episode Concept:</b> <em>“Venmo vs.&nbsp;Cash: How Generations Pay Each Other”</em><br>
-- <strong>Hook:</strong> Start with a story about the awkwardness of “Do you have Venmo?” vs.&nbsp;“Can I give you cash?”<br>
-- <strong>Content Flow:</strong><br>
-1. Quick history of peer-to-peer payments (PayPal → Venmo → Zelle → Apple/Google Pay).<br>
-2. Generational breakdown:<br>
-- Boomers: trust issues with digital money.<br>
-- Gen X: reluctant but practical adopters.<br>
-- Millennials: Venmo as a <em>social feed of transactions</em>.<br>
-- Gen Z: expect instant, seamless, emoji-filled payments.<br>
-3. Funny or awkward stories (splitting bills, gifts, forgotten rent).<br>
-4. Wrap-up: What this says about <em>trust, transparency, and etiquette</em> in tech.</p>
-<hr>
-<p><b>Other First-Episode Angles:</b><br>
-- <em>“Streaming Wars: Why Boomers Still Love Cable”</em><br>
-- <em>“Password Chaos: From Post-It Notes to Face ID”</em><br>
-- <em>“Group Chats Across Generations”</em></p>
-<hr>
-<b>Episode Length Recommendation:</b><br>
-- <strong>20–30 minutes</strong> works best for a first episode.<br>
-- If longer, break into clear <em>segments</em> (history → stories → debate → takeaway).<br>
-- Keep intros short (~2 minutes max) and get to the relatable part quickly.<br>
-
-
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
 </div>
-<p>In this response, we get an <strong>emoji</strong> which I found interesting. I’ve been getting these alot more with my promts to <strong>chatgpt-4o</strong> and even <strong>chatgpt-5</strong>. Have you been experiencing this too? Let me know :)</p>
-<p>But anyway, chat gave a great possible outline for the user to mold into precisely what they’d like. For a lot of individuals, the hardest part is the setup, so even just having a template like this can be very helpful. Utilizing LLMs this way has the potential to save thousands of hours for people because it can generate these rough starting points in seconds where it may take an individual an entire working day to come up with 10 distinct podcast concepts like earlier.</p>
-</section>
-<section id="thanks-for-reading" class="level2">
-<h2 class="anchored" data-anchor-id="thanks-for-reading">Thanks for reading!</h2>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, noted. Next question: <strong>Is it something you would find indoors?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+Yes
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay! My next question is: <strong>Is it typically made of wood?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Alright. Moving on. Is it something you would use for entertainment? (e.g., a game, a toy, a movie)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, good to know. My next question: <strong>Is it something that’s usually found in a kitchen?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+Yes
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay! Let’s see… Is it something you would use to prepare food? (e.g., a knife, a pot, a spoon)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, narrowing it down. Is it something you would store things in? (e.g., a box, a container, a shelf)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Alright, this is getting tricky! Is it something you would find in a bathroom?
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, let’s try this: <strong>Is it electronic?</strong> (Does it require electricity to function?)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, just a few more questions… Is it something you would typically find in a house? (meaning it’s not something you’d find in a store or outside)
+</p>
+</div>
+<p>Geez readers.. I’m a little conflicted here. I feel like this question violates the rules of the game a little bit.. What do you all think?</p>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, last question! <strong>Is it something that’s generally small in size?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+Yes.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay! Based on your answers, I’m going to guess: <strong>Is it a button?</strong>
+</p>
+</div>
+<p>Okay, well… that was interesting. The LLM only used 12 out of the 20 questions and still guessed wrong, which honestly surprised me a bit. Looking back at the way I introduced the game, I think part of the problem is on my side: my original prompt explained the rules (yes/no questions, 20-question limit, I’ll answer clearly), but I never told the model <em>how</em> to actually play in a smart way. I didn’t say it should be strategic, use most of its question budget, or avoid guessing too early—I basically invited it to “play along” without setting any expectations about optimal strategy. While this may not be an issue for larger models- it shows how prompting is incredibly important to smaller ones.</p>
+<p>Furthermore, the model seemed to lean into its default behavior: it tried to be confident and decisive instead of cautious. Rather than systematically narrowing things down like a classic 20 Questions player (splitting possibilities, ruling out big categories), it jumped to a guess once it thought it recognized a pattern from my answers. That makes sense for an LLM, since it’s trained to produce plausible next moves in a conversation, not to run a formal search algorithm in the background.</p>
+<p>So the wrong guess after just 12 questions isn’t just a random failure—it shows a mismatch between what I assumed it would do and what I actually told it to do. If I run this again, I’d want to tighten up the instructions: tell the model to think out loud about what each question rules out, to avoid guessing until it has strong evidence, and to treat the full 20 questions as a resource it should use efficiently. It would also be interesting to compare different prompts or different models and see which ones start to look more like they’re doing deliberate reasoning versus just pattern-matching with a confident vibe. If you end up doing this let me know what your results look like!</p>
 
 
 </section>
