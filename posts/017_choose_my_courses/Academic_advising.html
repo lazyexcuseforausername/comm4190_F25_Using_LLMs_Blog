@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Eleni">
+<meta name="dcterms.date" content="2025-11-09">
+<meta name="description" content="Exploring how well an LLM’s judgemenet comes to choosing my courses vs that of myself &amp; an academic advisor">
+
+<title>Can Chat-gpt-5 Choose My Spring Courses? – My Explorations With LLMs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-84e45be2601fe28dd90bd5a99269035f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">My Explorations With LLMs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lazyexcuseforausername"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/elenikan/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Can Chat-gpt-5 Choose My Spring Courses?</h1>
+                  <div>
+        <div class="description">
+          Exploring how well an LLM’s judgemenet comes to choosing my courses vs that of myself &amp; an academic advisor
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">Academic</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Eleni </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 9, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="upenn.png" class="img-fluid"></p>
+<p>Spring Semester is quickly approaching and like many of you I have been carefully crafting a course cart with Path@penn, penn course review, penn course plan, and the help of an academic advisor. This process can be very time consuming, frustrating, and even anxiety inducing for some individuals. As a result, I wanted to see if an LLM could help with this. Would it be able to navigate the intracacies of UPenn’s course requirements? would it be able to correctly identify the differences between our schools (ex: wharton, the college, the school of nursing, etc)? Let’s find out.</p>
+<p>I decided to be a bit more detailed in this prompt with <strong>Chat-GPT-5</strong>. I outlined all of the courses that I have already taken and clearly stated my academic level etc. Instead of explaining, Let me just show you! My prompts will be in <strong>red</strong> and Chat’s will be in <strong>blue</strong></p>
+<div style="background-color:#ffe6e6; padding:14px 16px; border-radius:10px; border:1px solid #ff4d4d;">
+<p style="margin:8px 0;">
+I am a third year student at the University of Pennsylvania. I am majoring in Economics and Minoring In data science &amp; analytics in the college of arts and sciences. I am currently in my fall semester and I need to choose courses for my spring semester.
+</p>
+<p style="margin:8px 0;">
+Here are all of the courses I have already taken:
+</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>
+Math 1400
+</li>
+<li>
+Math 1410
+</li>
+<li>
+COMM 4190
+</li>
+<li>
+STAT 4300
+</li>
+<li>
+STAT 4310
+</li>
+<li>
+ECON 0100
+</li>
+<li>
+ECON 0200
+</li>
+<li>
+ECON 2100
+</li>
+<li>
+ECON 2200
+</li>
+<li>
+SPAN 0100
+</li>
+<li>
+SPAN 0200
+</li>
+<li>
+SPAN 0300
+</li>
+<li>
+SPAN 0400
+</li>
+<li>
+EALC 1242
+</li>
+<li>
+GSWS 2700
+</li>
+<li>
+MATH 1300
+</li>
+<li>
+WRIT 0250
+</li>
+<li>
+COML 1701
+</li>
+<li>
+CIMS 1004
+</li>
+<li>
+PHYS 1100
+</li>
+<li>
+CIMS 1800
+</li>
+<li>
+STAT 4750
+</li>
+<li>
+PSYC 0001
+</li>
+</ul>
+<p style="margin:8px 0;">
+I need you to create a mock schedule of 4–6 classes for spring. You can find the available courses through UPenn’s various websites and you can find the requirements for graduation there as well.
+</p>
+</div>
+<div style="background-color:#e6f2ff; padding:16px 18px; border-radius:10px; border:1px solid #4d79ff;">
+<p>awesome—here are two <em>ready-to-register</em> mock schedules (5 courses each) that move you toward (a) the ECON BA and (b) finishing the College Data Science &amp; Analytics minor (DASA). I’m aligning these with the official degree rules and the spring-typical offerings noted in the Penn catalog.</p>
+<section id="option-a-quant-econ-core-sprint" class="level1">
+<h1>Option A: Quant &amp; econ-core sprint</h1>
+<ul>
+<li><strong>ECON 2310 Econometric Methods &amp; Models</strong> — completes the <em>Econometrics</em> requirement for the Econ BA (you’ve already satisfied the “Statistics” requirement via STAT 4300 + 4310). (<a href="https://catalog.upenn.edu/undergraduate/programs/economics-ba/economics-ba.pdf" title="Economics, BA">University of Pennsylvania Catalog</a>)</li>
+<li><strong>ECON 4410 Public Finance (4000-level ECON elective)</strong> — counts toward the 4 required 4000-level ECON electives. Catalog lists as Fall or Spring. (<a href="https://catalog.upenn.edu/courses/econ/" title="Economics (ECON) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>ECON 4510 International Trade (4000-level ECON elective)</strong> — another 4000-level elective; listed Fall or Spring. (<a href="https://catalog.upenn.edu/courses/econ/" title="Economics (ECON) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>STAT 4710 Modern Data Mining</strong> — counts for the DASA <em>Applied Data Science</em> bucket; offered Fall or Spring. Prereq satisfied by STAT 4310. (<a href="https://catalog.upenn.edu/courses/stat/" title="Statistics and Data Science (STAT) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>CIS 4190 Applied Machine Learning</strong> — appears on the DASA “Applied Data Science (Python)” list; good bridge between econ and DS. (<a href="https://web.sas.upenn.edu/data-science/data-science-minor/" title="Data Science and Analytics Minor | Data Science">SAS at Penn</a>)</li>
+</ul>
+<p><strong>Why this works:</strong></p>
+<ul>
+<li>Econ BA: You already have ECON 0100, 0200, 2100, 2200, and Math 1400/1410. Adding <strong>ECON 2310</strong> completes the econometrics core; <strong>ECON 4410</strong> and <strong>ECON 4510</strong> push you 2/4 into the required 4000-level ECON electives. (<a href="https://catalog.upenn.edu/undergraduate/programs/economics-ba/economics-ba.pdf" title="Economics, BA">University of Pennsylvania Catalog</a>)</li>
+<li>DASA minor: Your past <strong>STAT 4300, STAT 4310, PHYS 1100, STAT 4750</strong> already cover “Math &amp; Stats,” “Intro DS &amp; Programming,” and one <em>Elective</em>. <strong>STAT 4710</strong> (Applied DS) + <strong>CIS 4190</strong> (Applied DS Python list) move you closer to the 6-course structure. (<a href="https://web.sas.upenn.edu/data-science/data-science-minor/" title="Data Science and Analytics Minor | Data Science">SAS at Penn</a>)</li>
+</ul>
+</section>
+<section id="option-b-policyimpact-methods" class="level1">
+<h1>Option B: Policy/impact + methods</h1>
+<ul>
+<li><strong>ECON 2310 Econometric Methods &amp; Models</strong> — Econ BA econometrics (as above). (<a href="https://catalog.upenn.edu/undergraduate/programs/economics-ba/economics-ba.pdf" title="Economics, BA">University of Pennsylvania Catalog</a>)</li>
+<li><strong>ECON 4340 Empirical Economics of Climate Change (4000-level)</strong> — methods-heavy, policy angle; listed Fall or Spring. (<a href="https://catalog.upenn.edu/courses/econ/" title="Economics (ECON) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>ECON 4480 Economics of Education (4000-level)</strong> — listed Fall or Spring; builds causal inference intuition. (<a href="https://catalog.upenn.edu/courses/econ/" title="Economics (ECON) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>STAT 4420 Introduction to Bayesian Data Analysis</strong> — Spring offering; great for causal/forecast-y econ work; also on the DASA <em>Applied</em> list. (<a href="https://catalog.upenn.edu/courses/stat/" title="Statistics and Data Science (STAT) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>COMM 3130 Computational Text Analysis (DASA elective)</strong> — on the DASA elective list; applies NLP to social-science questions. (<a href="https://web.sas.upenn.edu/data-science/data-science-minor/" title="Data Science and Analytics Minor | Data Science">SAS at Penn</a>)</li>
+</ul>
+<p><strong>Why this works:</strong></p>
+<ul>
+<li>Econ BA: <strong>ECON 2310</strong> + two 4000-level ECONs progress you cleanly toward the 4 upper-level electives. (<a href="https://catalog.upenn.edu/undergraduate/programs/economics-ba/economics-ba.pdf" title="Economics, BA">University of Pennsylvania Catalog</a>)</li>
+<li>DASA minor: <strong>STAT 4420</strong> covers the <em>Applied Data Science</em> slot; <strong>COMM 3130</strong> adds another approved DS elective. (Reminder: DASA requires 6 courses total with specific core/elective mix and overlap limits.) (<a href="https://web.sas.upenn.edu/data-science/data-science-minor/" title="Data Science and Analytics Minor | Data Science">SAS at Penn</a>)</li>
+</ul>
+<hr>
+<section id="quick-audit-of-where-you-stand-per-the-official-rules" class="level2">
+<h2 class="anchored" data-anchor-id="quick-audit-of-where-you-stand-per-the-official-rules">Quick audit of where you stand (per the official rules)</h2>
+<ul>
+<li><strong>Econ BA structure (2025–26 catalog):</strong> 2 c.u. math; intro micro/macro; intermediate micro/macro; stats (via ECON 2300 <em>or</em> STAT 4300+4310); <strong>ECON 2310 econometrics</strong>; <strong>four 4000-level ECON electives</strong>. You’ve completed everything except <strong>ECON 2310</strong> and the 4000-level electives. (<a href="https://catalog.upenn.edu/undergraduate/programs/economics-ba/economics-ba.pdf" title="Economics, BA">University of Pennsylvania Catalog</a>)</li>
+<li><strong>DASA minor (College):</strong> 6 courses → 3 “core” (Intro DS &amp; Programming; Math &amp; Statistics; Applied DS) + 3 <em>Electives</em> from the approved list; page also lists many approved courses you’ve taken or could take (PHYS 1100, STAT 4300/4310, STAT 4750, STAT 4710, CIS 4190, etc.). (<a href="https://web.sas.upenn.edu/data-science/data-science-minor/" title="Data Science and Analytics Minor | Data Science">SAS at Penn</a>)</li>
+</ul>
+<hr>
+</section>
+<section id="nice-alternates-if-sectionstime-conflicts-pop-up" class="level2">
+<h2 class="anchored" data-anchor-id="nice-alternates-if-sectionstime-conflicts-pop-up">Nice alternates if sections/time conflicts pop up</h2>
+<ul>
+<li><strong>ECON 4330 Econometric Machine Learning Methods &amp; Models (4000-level)</strong> — advanced econ/ML; typically after 2310. (<a href="https://catalog.upenn.edu/courses/econ/" title="Economics (ECON) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>ECON 4405 Economic Program Evaluation (4000-level)</strong> — causal inference focus; recommended after 2310. (<a href="https://catalog.upenn.edu/courses/econ/" title="Economics (ECON) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+<li><strong>STAT 4700 Data Analytics &amp; Statistical Computing</strong> — R + workflows (counts for DASA Applied list). (<a href="https://catalog.upenn.edu/courses/stat/" title="Statistics and Data Science (STAT) < University of Pennsylvania">University of Pennsylvania Catalog</a>)</li>
+</ul>
+<hr>
+<section id="how-to-lock-these-in" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-lock-these-in">How to lock these in</h3>
+<ul>
+<li>Verify specific <strong>Spring 2026</strong> sections and times on <strong>Path@Penn</strong> / Course Search; the catalog shows which are <em>typically</em> offered in Spring and the official degree rules. (Econ BA PDF and DASA minor page above are the authoritative requirement sources.) (<a href="https://catalog.upenn.edu/undergraduate/programs/economics-ba/economics-ba.pdf" title="Economics, BA">University of Pennsylvania Catalog</a>)</li>
+</ul>
+<p>If you want, tell me which option vibes more (or mix &amp; match), plus any constraints (no Friday classes, max 4 courses, specific profs), and I’ll shape it into a day-by-day schedule with backup sections.</p>
+</section>
+</section>
+</section>
+</div>
+<p>I am <strong>shocked</strong> that Chat identified that I took the STAT 4300+4310 route instead of the ECON 2300 route. I have had many colleagues who had <strong>academic advisors</strong> not catch that before.</p>
+<p>Furthermore, this doesn’t stray too far from the courses I actually chose for next semester. I hope to take ECON 2310 (identified in all options from the LLM), ECON 4410 (option A in the LLM), another ECON elective, and a general elective.</p>
+<p>Here are some of its pitfalls: - It did not identify or offer suggestions for gen ed course requirements I am missing - It did not offer other general electives (however, this could be fixed if I added my other interests in the prompt)</p>
+<section id="thank-you-for-reading" class="level2">
+<h2 class="anchored" data-anchor-id="thank-you-for-reading">Thank you for reading</h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lazyexcuseforausername\.github\.io\/comm4190_F25_Using_LLMs_Blog\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
