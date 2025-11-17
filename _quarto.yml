@@ -12,7 +12,7 @@ website:
         href: https://www.linkedin.com/in/elenikan/
 format:
   html:
-    theme: vapor
+    theme: minty
     css: styles.css
 
 execute:
