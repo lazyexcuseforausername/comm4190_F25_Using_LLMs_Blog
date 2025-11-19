@@ -284,7 +284,14 @@
     "href": "posts/015_contexto/contexto.html#reflection",
     "title": "How fast can an LLM solve contexto?",
     "section": "Reflection",
-    "text": "Reflection\nWell.. it took Chat 17 guesses to get to the right answer! Personally, I dont think this is very bad. If you have played the game before and done better, congrats!\nI find it very interesting that this specific model uses SO MANY emojis… to the point that it kinda gets on my nerves.\nI think the model does this to attempt to mimic younger audiences (specifically in the way that they text one another, but I’m not sure)\nIn addition, I found it pretty odd that it went from refined concepts to broader concepts. Usually when I play this game I start with very broad concepts and then narrow my scope from there (think emotion, object, food, etc). Cha"
+    "text": "Reflection\nWell.. it took Chat 17 guesses to get to the right answer! Personally, I dont think this is very bad. If you have played the game before and done better, congrats!\nI find it very interesting that this specific model uses SO MANY emojis… to the point that it kinda gets on my nerves.\nI think the model does this to attempt to mimic younger audiences (specifically in the way that they text one another, but I’m not sure)\nIn addition, I found it pretty odd that it went from refined concepts to broader concepts. Usually when I play this game I start with very broad concepts and then narrow my scope from there (think emotion, object, food, etc). Chat went from apple to fruit and was surprised when it was further from the answer."
+  },
+  {
+    "objectID": "posts/015_contexto/contexto.html#thank-you-for-reading",
+    "href": "posts/015_contexto/contexto.html#thank-you-for-reading",
+    "title": "How fast can an LLM solve contexto?",
+    "section": "Thank you for reading!",
+    "text": "Thank you for reading!"
   },
   {
     "objectID": "posts/007_Creativity/Creativity.html",
