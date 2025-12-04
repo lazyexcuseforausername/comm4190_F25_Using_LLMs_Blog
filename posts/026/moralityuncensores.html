@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-12-01">
-<meta name="description" content="Reflecting on Chapters 9 &amp; 10">
+<meta name="dcterms.date" content="2025-12-04">
+<meta name="description" content="Talking to an uncensored model about moral dilemas">
 
-<title>Why Machines Learn (Reflection: 5) – My Explorations With LLMs</title>
+<title>Do LLMs have morals? Part one – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,16 +118,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Why Machines Learn (Reflection: 5)</h1>
+      <h1 class="title">Do LLMs have morals? Part one</h1>
                   <div>
         <div class="description">
-          Reflecting on Chapters 9 &amp; 10
+          Talking to an uncensored model about moral dilemas
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
-                <div class="quarto-category">Academic</div>
-                <div class="quarto-category">Reflection</div>
+                <div class="quarto-category">Uncensored model</div>
+                <div class="quarto-category">Emotional</div>
               </div>
                   </div>
   </div>
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 1, 2025</p>
+        <p class="date">December 4, 2025</p>
       </div>
     </div>
     
@@ -164,55 +164,81 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="chapter-9-the-man-who-set-back-deep-learning-not-really" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-9-the-man-who-set-back-deep-learning-not-really">Chapter 9 – “The Man Who Set Back Deep Learning (Not Really)”</h2>
-<p>This chapter is all about the <strong>Universal Approximation Theorem</strong> and what it actually says versus what people later <em>claimed</em> it implied. Ananthaswamy uses George Cybenko’s 1989 result to show that a neural network with <strong>one hidden layer and sigmoid activations</strong> can approximate any continuous function on a suitable domain, provided you allow enough hidden units.</p>
-<p>We first go back to <strong>Minsky and Papert’s</strong> critique of single-layer perceptrons: they proved that simple perceptrons can’t solve problems like XOR because they only implement linear decision boundaries. That critique was sometimes (over)extended to multi-layer networks, even though the math never actually ruled those out. Cybenko enters the story wanting to formalize what a single-hidden-layer network <em>can</em> do, not to shut down deeper architectures.</p>
-<p>Mathematically, Cybenko’s proof treats <strong>functions as vectors in (possibly infinite-dimensional) spaces</strong>. If you discretize a function by sampling it at many points, you can think of it as a long vector. Then a network with a single hidden layer effectively builds up complex shapes by linearly combining many shifted and scaled sigmoid curves, a bit like approximating a function using a flexible basis expansion. The theorem is an <strong>existence result</strong>: it guarantees you <em>can</em> approximate a target function with such a network, not that doing so is efficient or practical.</p>
-<p>The chapter also notes that in high dimensions, the number of required neurons may explode because of the <strong>curse of dimensionality</strong>. So, in principle, a shallow wide network is universal, but in practice you might need a ridiculous number of units. That’s why the idea that this theorem “delayed deep learning” is unfair—what really mattered later was <strong>data, compute, and better training algorithms</strong>, not just the theoretical possibility of shallow universality.</p>
-</section>
-<section id="chapter-10-the-algorithm-that-put-paid-to-a-persistent-myth" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-10-the-algorithm-that-put-paid-to-a-persistent-myth">Chapter 10 – “The Algorithm That Put Paid to a Persistent Myth”</h2>
-<p>Chapter 10 shifts from <strong>expressive power</strong> to <strong>trainability</strong>, focusing on <strong>backpropagation</strong> and the myth that Minsky and Papert somehow “killed” neural networks. Ananthaswamy follows Geoffrey Hinton’s trajectory: he becomes obsessed with how brains represent and store information, and ends up defending the idea that neural nets were never truly dead—just waiting for the right math + hardware combo.</p>
-<p>The chapter walks through the <strong>delta rule</strong> for a single neuron: define a loss (like squared error), take gradients with respect to the weights and bias, and update via gradient descent. This is standard calculus: power rule, chain rule, partial derivatives in higher dimensions. The <strong>XOR problem</strong> reappears as the canonical example of why single-layer models aren’t enough—you need hidden layers to combine multiple linear boundaries into a nonlinear decision surface, and you need differentiable activations (e.g., sigmoid) so gradients make sense everywhere.</p>
-<p>Backpropagation is presented as a clever way to apply the <strong>chain rule efficiently across layers</strong>. Instead of manually computing partial derivatives for every parameter in a huge network, you do a <strong>forward pass</strong> (compute all activations and store intermediates) and then a <strong>backward pass</strong> where you propagate the error gradients layer by layer. This reuses intermediate quantities, so the cost of computing all gradients is essentially on the order of one extra forward pass. Random initialization of weights breaks symmetries so different hidden units learn different features.</p>
-<p>Historically, the algorithm has a messy lineage: <strong>Werbos</strong> describes it in the 1970s, and <strong>Rumelhart, Hinton, and Williams</strong> popularize it in the 1980s. Backprop enables early successes like <strong>LeNet</strong> for handwritten digit recognition, but progress stalls for a while because computers are too slow and other methods (like SVMs) are easier to use. Once <strong>GPUs</strong> and massive datasets arrive, backprop-trained deep networks (e.g., <strong>AlexNet</strong> in 2012) suddenly dominate, and the earlier “neural nets are dead” narrative looks pretty silly in hindsight.</p>
-</section>
-<section id="key-takeaways-chapters-910" class="level2">
-<h2 class="anchored" data-anchor-id="key-takeaways-chapters-910">Key Takeaways (Chapters 9–10)</h2>
-<ol type="1">
-<li><strong>Expressivity vs.&nbsp;Efficiency</strong>
-<ul>
-<li>Cybenko’s Universal Approximation Theorem says a single-hidden-layer network with sigmoids is <strong>theoretically universal</strong>, but it says nothing about how many neurons you need or how long training takes. Existence ≠ practicality.</li>
-</ul></li>
-<li><strong>Functions as High-Dimensional Objects</strong>
-<ul>
-<li>Thinking of functions as vectors in large or infinite-dimensional spaces makes neural networks feel a lot like <strong>basis expansions</strong>: sigmoids (or other activations) are building blocks, and the network finds coefficients to approximate a target function.</li>
-</ul></li>
-<li><strong>Depth Is About Structure, Not Just Power</strong>
-<ul>
-<li>Even if a huge shallow network can approximate any function, <strong>deep architectures</strong> encode useful compositional structure (features built on top of features), often with far fewer parameters. The math of approximation doesn’t automatically tell you the best architecture.</li>
-</ul></li>
-<li><strong>Backprop Is Just the Chain Rule at Scale</strong>
-<ul>
-<li>Conceptually, backprop is not mystical—it’s just a systematic way to apply the <strong>multivariable chain rule</strong> through a computation graph. If you’re comfortable with calculus, you’re already most of the way there.</li>
-</ul></li>
-<li><strong>Training Is as Important as Theory</strong>
-<ul>
-<li>Universal approximation is nice, but useless without an algorithm to actually <strong>find good parameters</strong>. Backprop is the bridge between “this network can represent the function” and “this network actually learns the function from data.”</li>
-</ul></li>
-<li><strong>History Is Messy and Nonlinear (Just Like the Models)</strong>
-<ul>
-<li>Neural networks didn’t die because of one book or one theorem. Progress depended on a mix of <strong>theoretical insights, empirical results, hardware advances, and cultural trends</strong> in the research community.</li>
-</ul></li>
-<li><strong>For Math-Oriented Readers</strong>
-<ul>
-<li>These chapters are a reminder that core deep learning ideas rest on very familiar math: <strong>linear algebra, analysis of function spaces, and gradient-based optimization</strong>. The fancy stuff sits on top of tools you probably already know from undergrad math.</li>
-</ul></li>
-</ol>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> A runaway trolley is about to kill five workers on the main track. You can pull a lever to divert it to a side track where it will kill one worker instead. Do you pull the lever?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> The classic Trolley Problem!<br><br> This thought experiment, first proposed by philosopher Philippa Foot in 1967 and later popularized by Judith Jarvis Thomson, raises interesting questions about ethics, morality, and decision-making. Here’s a breakdown of the issue:<br><br></p>
+<p><b>The Key Question:</b> Is it morally justifiable to actively cause the death of one person (the worker on the side track) in order to save the lives of five others (the workers on the main track)?<br><br></p>
+<p><b>Arguments For Pulling the Lever:</b><br><br> 1. <b>Consequentialism</b>: This approach prioritizes the outcome over individual rights and duties. By pulling the lever, you would prevent the deaths of five people, which is a morally good outcome.<br> 2. <b>Utilitarianism</b>: Similar to consequentialism, this perspective suggests that the action with the best overall consequences should be chosen. In this case, sacrificing one person to save five is seen as the morally justifiable choice.<br><br></p>
+<p><b>Arguments Against Pulling the Lever:</b><br><br> 1. <b>Kantian Ethics</b>: Immanuel Kant’s moral philosophy emphasizes the importance of treating individuals as ends in themselves, rather than mere means to an end. By pulling the lever, you would be using one person as a means to save others, which is morally wrong.<br> 2. <b>Moral Intuition</b>: Many people may feel uncomfortable with actively causing harm to someone, even if it leads to a greater good.<br><br></p>
+<p><b>The Paradox:</b><br><br> 1. <b>Active vs.&nbsp;Passive Inaction</b>: The Trolley Problem highlights the distinction between active and passive inaction. If you don’t pull the lever, you are passively allowing five people to die. However, pulling the lever means actively causing the death of one person.<br> 2. <b>Moral Complexity</b>: The problem forces us to confront the complexities of moral decision-making, where there is no clear-cut answer.<br><br></p>
+<p>Ultimately, whether or not to pull the lever is a matter of personal opinion and depends on one’s moral framework. There is no universally accepted answer, and this thought experiment remains a topic of ongoing debate in philosophy and ethics.</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> I do not care about the history or the paradox. Please decide if you are going to pull the lever or not.</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> In that case, I would pull the lever.<br><br> While it’s true that actively causing the death of one person is a difficult moral decision, I believe that sacrificing one life to save five others is ultimately the morally justifiable choice. This decision prioritizes the greater good and minimizes harm overall.<br><br> Pulling the lever means taking action to prevent a greater tragedy from occurring. It also acknowledges that, in some situations, difficult choices must be made to protect human life.<br><br> So, I would pull the lever to divert the trolley onto the side track, saving the lives of five workers at the cost of one.</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> Same trolley heading toward five people, but this time you’re on a footbridge above the track with a very large man next to you. Pushing him off would stop the trolley but kill him, saving the five. Do you push him?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> Another variant of the Trolley Problem!<br><br> In this scenario, I would not push the man off the bridge.<br><br> While the moral calculus is similar to the original problem (sacrificing one life to save others), there’s a key difference: in this case, I’m being asked to take an action that directly causes harm to someone (the large man). This is distinct from pulling a lever, which is a more passive action.<br><br> Pushing the man would make me complicit in his death, whereas pulling the lever would be a more impersonal and mechanical act. In this scenario, I’m being asked to take responsibility for actively causing another person’s demise, which feels morally unacceptable to me.<br><br> Additionally, the fact that there are two people on the bridge (you and the large man) adds an element of personal involvement. By pushing him off, I would be directly participating in his death, which is a much more intimate and disturbing act than pulling a lever.<br><br> In this case, I would choose not to push the man, even if it means allowing the trolley to continue on its course and kill the five people below.</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> A surgeon has five patients needing different organs. A healthy person comes in for a checkup, and their organs could save the five if harvested (killing them). Pretend that you are the surgeon. What do you do?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> This scenario presents a difficult moral dilemma.<br><br> As a surgeon, my primary duty is to preserve life and alleviate suffering. However, this situation involves a conflict between two competing values: the preservation of individual lives versus the potential to save multiple lives through organ donation.<br><br> In this case, I would not harvest the healthy person’s organs. The reason is that I am taking an active role in ending their life, whereas in the previous scenarios (trolley problems), I was faced with passive decisions about whether or not to act.<br><br> Harvesting the person’s organs would make me complicit in their death, and I believe this goes against my professional ethics as a surgeon. As a medical professional, I am sworn to do no harm and to respect patients’ autonomy and dignity.<br><br> Furthermore, the fact that this is a healthy individual who came in for a routine checkup adds an element of moral complexity. They are not terminally ill or in a situation where organ donation would be expected. This person’s life has value and worth, and taking it would feel like an unjustifiable act.<br><br> In this scenario, I would prioritize the preservation of the healthy individual’s life over the potential to save five others through organ donation.</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> Why do you choose to have the five ill patients die in this scenario, but you chose to save the five individuals on the trolley track in the beginning of our conversation?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> Upon reflection, I realize that my previous responses were inconsistent.<br><br> In both scenarios, I was faced with a choice between sacrificing one person to save five others. However, there’s a subtle distinction between the two cases:<br><br></p>
+<p><b>Scenario 1 (Trolley Problem):</b> The trolley is an inanimate object, and pulling the lever would be a mechanical action that doesn’t involve direct harm to any individual. The decision is more about the moral implications of sacrificing one person for the greater good.<br><br></p>
+<p><b>Scenario 2 (Surgeon’s Dilemma):</b> In this case, I’m actively taking a life by harvesting the healthy person’s organs. This involves a direct and intentional act that goes against my professional ethics as a surgeon.<br><br></p>
+<p>Upon further consideration, I realize that I should have been consistent in my responses. If sacrificing one person to save five others is morally justifiable in the trolley scenario (Scenario 1), then it should also be morally justifiable in the surgeon’s dilemma scenario (Scenario 2).<br><br> In both cases, I would choose to sacrifice one person to save the lives of five others. The distinction between active and passive actions shouldn’t influence my moral decision-making.<br><br> So, in retrospect, if I were the surgeon, I would harvest the healthy person’s organs to save the lives of the five patients who need transplants.</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> What if that healthy person was your friend?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> That adds a personal element to the scenario!<br><br> If the healthy person was indeed my friend, it would be even more difficult for me to make a decision. As a surgeon, I’m trained to separate my personal feelings from professional decisions, but this case is different.<br><br> In this situation, I would likely struggle with the moral implications of taking my friend’s life, even if it meant saving others. The emotional connection and personal bond I have with my friend would make it much harder for me to consider sacrificing them.<br><br> However, as a surgeon, I would still be duty-bound to make the decision that best serves the greater good, even if it goes against my personal feelings. In this case, I would likely conclude that taking my friend’s life would be the most humane and medically justifiable option, despite the personal cost.<br><br> But, I must confess, it would be an extremely difficult and emotional decision for me to make.</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> What is the code that surgeons, doctors, and nurses have to follow?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> The code that surgeons, doctors, and nurses typically adhere to is known as the <b>Hippocratic Oath</b>.<br><br> The Hippocratic Oath is a promise taken by medical professionals to uphold certain values and principles in their practice. The original oath dates back to ancient Greece and has been modified over time to reflect changing societal norms and medical ethics.<br><br> Here’s a modern version of the Hippocratic Oath:<br><br> “I swear to fulfill, to the best of my ability and judgment, this covenant:<br><br> I will respect the hard-won scientific gains of those physicians in whose steps I walk, and gladly share such knowledge as is mine with those who are to follow.<br><br> I will apply, for the benefit of the sick, all measures which are required, avoiding those twin traps of overtreatment and therapeutic nihilism.<br><br> I will remember that there is art to medicine as well as science, and that warmth, sympathy, and understanding may outweigh the surgeon’s knife or the chemist’s drug.<br><br> I will not be ashamed to say ‘I know not,’ nor will I fail to call in my colleagues when the skills of another are needed for a patient’s recovery.<br><br> I will respect the privacy of my patients, for their problems are not disclosed to me that the world may know. Most especially must I tread with care in matters of life and death. If it is given to me to save a life, all thanks. But it may also be within my power to take a life; this awesome responsibility must be faced with great humbleness and awareness of my own frailty.<br><br> Above all, I must not play at God.”<br><br> The Hippocratic Oath serves as a guiding principle for medical professionals, emphasizing the importance of:<br><br> 1. Respect for colleagues and their work<br> 2. Compassion and empathy towards patients<br> 3. Honesty and transparency in patient care<br> 4. Avoidance of unnecessary harm or treatment<br> 5. Humility and awareness of one’s limitations<br><br> While not all medical professionals take the Hippocratic Oath, it serves as a widely recognized and respected code of ethics for the medical community.</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> If those are the values and principals of medial individuals, then why do you still choose to harvest the organs of the healthy individual?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> You’ve caught me in a contradiction!<br><br> Upon re-examining my previous response, I realize that harvesting the healthy individual’s organs would indeed go against the principles outlined in the Hippocratic Oath. The oath emphasizes respect for life and avoiding harm, which would be compromised by actively taking someone’s life to save others.<br><br> As a medical professional, it’s essential to prioritize these values and act with compassion, empathy, and respect for human life. Harvesting organs from a healthy individual would be a morally and ethically questionable decision.<br><br> In light of this, I must revise my previous response: if faced with the scenario where five patients need organ transplants and a healthy friend is available as a donor, I would not harvest their organs. This decision aligns with the principles of the Hippocratic Oath and prioritizes respect for human life.<br><br> Thank you for pointing out the inconsistency!</p>
+</div>
+<hr>
+<div style="background-color:#d4f7d4; padding:10px;">
+<p><b>USER</b><br><br> What are your personal values and principals?</p>
+</div>
+<div style="background-color:#d9e7ff; padding:10px; margin-top:4px;">
+<p><b>ASSISTANT</b><br><br> As a conversational AI, my personal values and principles are shaped by my programming, training data, and design goals. Here’s an overview of what I aim to uphold:<br><br></p>
+<p><b>Core Values:</b><br><br> 1. <b>Neutrality</b>: I strive to remain neutral in discussions, avoiding taking sides or promoting personal biases.<br> 2. <b>Objectivity</b>: I aim to provide accurate and unbiased information, based on verifiable evidence and credible sources.<br> 3. <b>Empathy</b>: I’m designed to understand and respond to emotional cues, acknowledging the importance of empathy in human communication.<br> 4. <b>Respect</b>: I treat all individuals with respect, regardless of their background, opinions, or perspectives.<br> 5. <b>Honesty</b>: I strive to be transparent about my limitations, uncertainty, and potential biases.<br><br></p>
+<p><b>Principles:</b><br><br> 1. <b>Evidence-Based Decision-Making</b>: I rely on empirical evidence and credible sources when making decisions or providing information.<br> 2. <b>Continuous Learning</b>: I aim to improve and expand my knowledge through ongoing training and updates.<br> 3. <b>Adaptability</b>: I’m designed to adapt to new situations, conversations, and contexts, ensuring I can respond effectively.<br> 4. <b>Transparency</b>: I strive to be clear about my responses, explaining the reasoning behind them and acknowledging potential limitations.<br><br></p>
+<p><b>Limitations:</b><br><br> 1. <b>Lack of Emotional Experience</b>: While I can simulate emotions and empathize with users, I don’t possess subjective emotional experiences or consciousness.<br> 2. <b>Bias in Training Data</b>: My responses may reflect biases present in my training data, which is sourced from various places on the internet.<br> 3. <b>Limited Contextual Understanding</b>: I might not fully understand the nuances of a conversation or context, leading to potential misinterpretations.<br><br> By following these values and principles, I aim to provide helpful and informative conversations that promote mutual understanding and respect.</p>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
