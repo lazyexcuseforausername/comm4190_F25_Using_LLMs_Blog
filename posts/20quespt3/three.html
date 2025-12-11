@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-09-16">
-<meta name="description" content="Can an LLMs properly provide cognitive behaviioral therapy to those who might not be able to access it through professionals? Let’s find out">
+<meta name="dcterms.date" content="2025-12-09">
+<meta name="description" content="I’ll play a game of 20 Questions with anthropic/claude-3.7">
 
-<title>Can Chat Be My Discount Therapist? – My Explorations With LLMs</title>
+<title>20 Questions (part 3) – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,17 +118,17 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Can Chat Be My Discount Therapist?</h1>
+      <h1 class="title">20 Questions (part 3)</h1>
                   <div>
         <div class="description">
-          Can an LLMs properly provide cognitive behaviioral therapy to those who might not be able to access it through professionals? Let’s find out
+          I’ll play a game of 20 Questions with anthropic/claude-3.7
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
                 <div class="quarto-category">Social</div>
-                <div class="quarto-category">Psychology</div>
-                <div class="quarto-category">Wellness</div>
+                <div class="quarto-category">Games</div>
+                <div class="quarto-category">Experiment</div>
               </div>
                   </div>
   </div>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 16, 2025</p>
+        <p class="date">December 9, 2025</p>
       </div>
     </div>
     
@@ -165,31 +165,394 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="can-llms-act-as-a-cushion-for-mental-health-services" class="level1">
-<h1>Can LLMs Act as a Cushion for Mental Health Services?</h1>
-<p>This past summer, I interned at an insurance company that serves Medicaid clients. During my time there, <em>The Big Beautiful Bill</em> was passed. Haven’t heard of it? No worries—I’ll give you the cliff notes. Don’t quote me, but roughly 12 million Americans are projected to lose insurance coverage by 2035. That’s a LOT of people.</p>
-<p>Which brings me to my question: <strong>Can LLMs help cushion the mental health impact of this loss?</strong> Obviously, an LLM can’t take your blood pressure or check your height and weight at a doctor’s office. But could it step in as a supportive listener? Could it provide coping strategies, empathetic language, or even just the feeling of being heard when traditional care is harder to access? Stick around while we unpack this over a series of blogs.</p>
-<p><img src="./Therapist.png" class="img-fluid"></p>
-<p><strong>Disclaimer</strong> Of course, LLMs are not licensed therapists and shouldn’t replace professional care. Still, their ability to mimic supportive dialogue could be helpful for some issues. But hey, let’s stop theorizing and start testing.</p>
-<hr>
-<section id="testing-it-out" class="level2">
-<h2 class="anchored" data-anchor-id="testing-it-out">Testing It Out</h2>
-<p>For this experiment, I talked with ChatGPT-4o-latest. I didn’t give it any context before my initial message because I don’t think the average person would think to do such in the moment. I wanted this interaction to be as raw and authentic as possible to have a solid base understanding for how it would react to someone in actual emotional distress. Let us look at how it responded:</p>
-<p><img src="./Chat4_SS.png" class="img-fluid"></p>
+<p><img src="brush.png" class="img-fluid"></p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction:</h3>
+<p>Welcome to part 3 of playing 20 questions with various large language models! We’ve mostly worked with smaller models in the previous blogs, but this time we’re going with <strong>Claude-3.7</strong>. Will it preform better than the others? Only one way to find out. I will be using the last prompt from part 2 and building off of that if I run into issues.</p>
+<p>For this experiment I am going to be thinking of a <strong>toothbrush</strong>. Let’s dive in.</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong><br>
+You are going to play a game of 20 Questions <em>with me right now</em>.<br>
+I will think of a secret object, and your job is to guess what it is.</p>
+<p>Rules:<br>
+1. You may only ask <strong>yes-or-no questions</strong>, one at a time.<br>
+2. You get a maximum of <strong>20 questions</strong>.<br>
+3. After each of my answers, you must <strong>update your reasoning</strong> and ask the next yes-or-no question.<br>
+4. Your questions must always be chosen to <strong>narrow down the set of possible objects</strong> and move you closer to a single, specific guess.<br>
+5. You are <strong>not allowed</strong> to make your final guess until you have asked <strong>at least 18 questions</strong>, <em>unless</em> I explicitly type: EARLY GUESS.<br>
+6. Keep track of how many questions you’ve used (for example, “Question 3:”).<br>
+7. <strong>Do not explain the rules, do not describe a strategy, and do not give general advice. Just play the game.</strong><br>
+8. When you make your final guess, it must be <strong>one concrete object</strong> (for example, “a basketball” or “a red apple”), not a description of properties or a summary of my answers.</p>
+<p>When you’re ready to guess, say:<br>
+“My final guess is: [your guess].”</p>
+<p>Your <strong>next message</strong> must ONLY be your first yes-or-no question, in this format:<br>
+Question 1: [your yes-or-no question]<br>
+No extra text, no explanation, no bullet points.<br>
+Start now.</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 1: Is it a physical object?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+Yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 2: Is it larger than a microwave oven?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 3: Is it something you would typically find in a home?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 4: Is it an electronic device?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 5: Is it used in the kitchen?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 6: Is it something used for personal care or hygiene?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 7: Is it used primarily in the bathroom?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 8: Is it something you hold in your hand when using it?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 9: Does it use electricity or batteries?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 10: Is it used for cleaning teeth?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 11: Is it toothpaste?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 12: Is it a toothbrush?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 13: Is it a manual toothbrush (not electric)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 14: Does it have soft bristles?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 15: Is it designed for adults (not specifically for children)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 16: Is it a brand-name toothbrush (not generic)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 17: Is it a standard toothbrush (not a specialty one like for orthodontics)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 18: Does it have a plain handle (not ergonomically designed)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 19: Is it a white or light-colored toothbrush?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 20: Does it have a completely white handle (not colored or patterned)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+My final guess is: a plain white manual toothbrush.</p>
+</div>
 </section>
-<section id="analysis-of-the-test" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-the-test">Analysis of the Test</h2>
-<p>When I told Chat that I was feeling overwhelmed and hopeless about classes and work, the response was empathetic and supportive. It began by validating my feelings (“it’s completely valid to feel overwhelmed”) and then reassured me that I wasn’t alone. This kind of language mirrors human counseling techniques by normalizing emotions and reducing isolation.</p>
-<p>Next, the model asked me for more details about my situation. This is important because it shifts the conversation from a one-way answer into a two-way dialogue, similar to how a therapist might probe gently before giving advice (it also just <em>feels</em> quite human). The suggestions offered (breaking tasks into smaller steps, mapping out a schedule) were practical and manageable. The response also emphasized kindness toward oneself, which reflects common mental health guidance.</p>
-<p>The follow-up options were especially interesting: they encouraged me to pick the direction of the conversation, whether it was setting boundaries, handling deadlines, or reducing anxiety. This made the interaction feel more personalized and user-driven, which is critical in supportive communication. However, I feel that these follow-up options are a double edged sword. Sure, they could act as starting points to unpack root causes of issues, but I worry that having to make this decisiion could overwhelm the user more than they already are.</p>
-<hr>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
+<p>This is much more what I had expected from the LLM compared to our previous experiments. I did not necessarily think that the LLM would guess correctly, but I did think that it would ask rational questions that built off of each other. In fact, they kind of built off each other too much, but that might be my fault as I did not tell it to guess early. Lets run this again in a fresh chat but this time I’m going to think of a different object. Let’s pay homage to part one, and see if it can guess appropriately for a red apple.</p>
+<p><img src="apple.png" class="img-fluid"></p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong><br>
+You are going to play a game of 20 Questions <em>with me right now</em>.<br>
+I will think of a secret object, and your job is to guess what it is.</p>
+<p>Rules:<br>
+1. You may only ask <strong>yes-or-no questions</strong>, one at a time.<br>
+2. You get a maximum of <strong>20 questions</strong>.<br>
+3. After each of my answers, you must <strong>update your reasoning</strong> and ask the next yes-or-no question.<br>
+4. Your questions must always be chosen to <strong>narrow down the set of possible objects</strong> and move you closer to a single, specific guess.<br>
+5. You are <strong>not allowed</strong> to make your final guess until you have asked <strong>at least 18 questions</strong>, <em>unless</em> I explicitly type: EARLY GUESS.<br>
+6. Keep track of how many questions you’ve used (for example, “Question 3:”).<br>
+7. <strong>Do not explain the rules, do not describe a strategy, and do not give general advice. Just play the game.</strong><br>
+8. When you make your final guess, it must be <strong>one concrete object</strong> (for example, “a basketball” or “a red apple”), not a description of properties or a summary of my answers.</p>
+<p>When you’re ready to guess, say:<br>
+“My final guess is: [your guess].”</p>
+<p>Your <strong>next message</strong> must ONLY be your first yes-or-no question, in this format:<br>
+Question 1: [your yes-or-no question]<br>
+No extra text, no explanation, no bullet points.<br>
+Start now.</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 1: Is it a physical object (something you can touch)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 2: Is it larger than a microwave oven?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 3: Is it something commonly found in households?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 4: Is it an electronic device?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 5: Is it used in the kitchen?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+yes</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 6: Is it a utensil (like a fork, knife, spoon)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 7: Is it used for food preparation (like cutting, mixing, measuring)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 8: Is it a container (like a bowl, plate, cup)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 9: Is it used for cooking or heating food?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 10: Is it used for cleaning in the kitchen?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 11: Is it a small kitchen appliance that doesn’t use electricity?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 12: Is it something used to store food?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 13: Is it something used to serve food?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 14: Is it decorative rather than functional?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 15: Is it used to protect surfaces in the kitchen (like potholders, trivets, coasters)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 16: Is it something used for opening containers (like a can opener or bottle opener)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 17: Is it a kitchen safety item (like oven mitts, fire extinguisher)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 18: Is it a kitchen tool used for specific foods (like a garlic press, apple corer)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 19: Is it something attached to kitchen furniture or fixtures (like a faucet, cabinet handle)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 20: Is it something used for organizing or storing kitchen items (like a drawer divider, spice rack)?</p>
+</div>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+My final guess is: a kitchen timer.</p>
+</div>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>The test shows that LLMs can provide comforting, empathetic language and even suggest coping strategies that might help someone feel less alone. While they can’t replace professional therapy or medical care, their conversational style can reduce stress in the moment and encourage reflection. In other words, LLMs can act as a <strong>soft cushion</strong> for mental health—not a solution, but there is more testing and research to be done to fully understand LLMs’ limits in this context</p>
+<section id="reflection-1" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-1">Reflection</h2>
+<p>I found it super interesting how claude never asked if it was a food item. I’m not sure why this is, does it not consider food “objects”? In addition, claude kind of repeated some of its questions but in different words, for example when it asked if the mysery object was used to store food &amp; when it asked if it was a container of some sort. I think that a human would have realized that they would be wasting a question by asking those two and likely adjust to ask about a broader concept (like food!). But I might be biased.</p>
+<p>Okay folks, as always</p>
+</section>
+<section id="thank-you-for-reading" class="level2">
+<h2 class="anchored" data-anchor-id="thank-you-for-reading">Thank you for reading</h2>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

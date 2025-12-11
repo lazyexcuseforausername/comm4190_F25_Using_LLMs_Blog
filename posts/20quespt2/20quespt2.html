@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-10-07">
-<meta name="description" content="I’ll play a game of 20 Questions with the LLM, where it tries to guess what I’m thinking of by asking yes-or-no questions. It’s a fun way to see how it narrows things down and reasons step by step.">
+<meta name="dcterms.date" content="2025-12-08">
+<meta name="description" content="I’ll play a game of 20 Questions with DeepSeek-r1:1.5b">
 
-<title>20 Questions – My Explorations With LLMs</title>
+<title>20 Questions (part 2) – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,16 +118,17 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">20 Questions</h1>
+      <h1 class="title">20 Questions (part 2)</h1>
                   <div>
         <div class="description">
-          I’ll play a game of <strong>20 Questions</strong> with the LLM, where it tries to guess what I’m thinking of by asking yes-or-no questions. It’s a fun way to see how it narrows things down and reasons step by step.
+          I’ll play a game of 20 Questions with DeepSeek-r1:1.5b
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
                 <div class="quarto-category">Social</div>
-                <div class="quarto-category">experimenting</div>
+                <div class="quarto-category">Games</div>
+                <div class="quarto-category">Experiment</div>
               </div>
                   </div>
   </div>
@@ -145,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 7, 2025</p>
+        <p class="date">December 8, 2025</p>
       </div>
     </div>
     
@@ -164,169 +165,167 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="question.png" class="img-fluid"></p>
-<section id="questions" class="level3">
-<h3 class="anchored" data-anchor-id="questions">20 Questions</h3>
-<p><strong>20 Questions</strong> is a classic guessing game built on curiosity and clever deduction.<br>
-Here’s how it works:</p>
+<p><img src="Pillow.png" class="img-fluid"></p>
+<section id="set-up" class="level3">
+<h3 class="anchored" data-anchor-id="set-up">Set-Up</h3>
+<p>Hello dear reader. If you have not read my first blog on 20 questions with an LLM- I suggest you go there first as I will be building on concepts discussed there.</p>
+<p>Once again we will be playing 20 questions, however, with a few changes this time.</p>
+<p>I’m going to be working with <strong>DeepSeek-r1:1.5b</strong> today</p>
+<p>For this experiment I am going to be thinking of a <strong>pillow</strong> (this is what the LLM will be trying to guess, if you have forgotten the rules of 20 questions, they will be outlined in my prompt.)</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong></p>
+<p>Let’s play a game of 20 Questions. I will think of a secret object, and your job is to guess what it is.</p>
+<p><strong>Rules:</strong></p>
 <ol type="1">
-<li>One player secretly thinks of a noun (any person, place, or thing).<br>
-</li>
-<li>The other player has to figure it out by asking <strong>yes-or-no questions only</strong>.<br>
-</li>
-<li>With each question, the possibilities narrow ( examples: is it alive? Can you eat it? Is it bigger than a breadbox?)</li>
-<li>The guesser has at most <strong>20 questions</strong> to solve the mystery.</li>
+<li>Only yes-or-no questions, one at a time.</li>
+<li>You get a maximum of 20 questions.</li>
+<li>After each answer, update your reasoning and ask the next yes-or-no question.</li>
+<li>Use all (or almost all) of your questions before making a final guess, unless you’re extremely confident.</li>
+<li>Keep track of how many questions you’ve used (for example, “Question 3:”).</li>
 </ol>
-<p>This is a really fun game to play with your friends or family. During Covid my friends and I would call and try to guess what the other was thinking with this game and it was a great way of connecting. What we’re exploring today is if large language models can do this since they are already next token predictors.</p>
-<p>I’m going to be working with <strong>gemma3:4b</strong> which is a model on <strong>Ollama</strong></p>
-<p>For today’s experiment I am going to be thinking of an <strong>apple</strong></p>
-<p>My texts will be in <strong>pink</strong>, and the llm will be in <strong>blue</strong></p>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-I want to play a game of 20 Questions with you Here’s how it works:
-</p>
-<ol style="margin:8px 0 12px 20px;">
-<li>
-I’ll think of a secret object.
-</li>
-<li>
-You can only ask yes-or-no questions to figure out what it is.
-</li>
-<li>
-You get a maximum of 20 questions.
-</li>
-<li>
-I’ll answer each one with “yes” or “no”
-</li>
+<p>When you’re ready to guess, say: “My final guess is: [your guess].”</p>
+<p>Start the game now by asking your first yes-or-no question.</p>
+</div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>LLM</strong></p>
+<p>The key is that all living things float in water because they require air and water. Therefore, if an object floats, it must either be a water-based plant or a dead animal. A common identification could be:</p>
+<p><strong>Answer:</strong> It’s a water lily!</p>
+<p>This is because many people know water lilies are plants found in water, but without specific context, guessing “water lily” is the most logical starting point based on floating properties.</p>
+</div>
+<p>I have absolutely no idea why it gave us this output honestly. I’m gonna try to run my prompt again and see what happens.</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong></p>
+<p>Let’s play a game of 20 Questions. I will think of a secret object, and your job is to guess what it is.</p>
+<p><strong>Rules:</strong></p>
+<ol type="1">
+<li>Only yes-or-no questions, one at a time.</li>
+<li>You get a maximum of 20 questions.</li>
+<li>After each answer, update your reasoning and ask the next yes-or-no question.</li>
+<li>Use all (or almost all) of your questions before making a final guess, unless you’re extremely confident.</li>
+<li>Keep track of how many questions you’ve used (for example, “Question 3:”).</li>
 </ol>
-<p style="margin:8px 0;">
-Can you play this game with me?
-</p>
+<p>When you’re ready to guess, say: “My final guess is: [your guess].”</p>
+<p>Start the game now by asking your first yes-or-no question.</p>
 </div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay, let’s play! I’m ready. My first question is: <strong>Is it an animal?</strong>
-</p>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px;">
+<p><strong>ASSISTANT</strong></p>
+<p>To effectively play the game of 20 Questions, follow this structured approach:</p>
+<ol type="1">
+<li><p><strong>Initial Question</strong>: Begin by asking a broad question to gather initial information. For example:</p>
+<ul>
+<li>“What is your favorite color?”</li>
+</ul></li>
+<li><p><strong>First Answer</strong>: Depending on their response (yes or no), proceed accordingly.</p></li>
+<li><p><strong>Exploring Categories</strong>:</p>
+<ul>
+<li>If the answer was yes, ask specific questions about that category to explore further, such as:
+<ul>
+<li>“Does your favorite color come in shades of red and pink?”</li>
+<li>“What are the common shades associated with your favorite color?”</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Exploring Attributes</strong>:</p>
+<ul>
+<li>After narrowing down to a subset of possibilities, ask more specific yes-or-no questions related to attributes within that category.</li>
+</ul></li>
+<li><p><strong>Adjusting Based on Answers</strong>: Continue asking questions based on their answers until you can identify the object.</p></li>
+<li><p><strong>Final Guess</strong>: Once all relevant questions are asked, make your final guess confidently.</p></li>
+</ol>
+<p><strong>Example Sequence</strong>: - Q1: “What is your favorite color?” Answer: Yes<br>
+- Then ask: “Does your favorite color come in shades of red and pink?”</p>
+<p>This method allows for both broad exploration and detailed questioning to identify the object.</p>
 </div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
+<p>This experiment is not going anything like I thought it would. But I think I’m learning more about how the LLM is reading my prompt at least. I’m going to make some changes and start again.</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong></p>
+<p>You are going to play a game of 20 Questions <em>with me right now</em>.</p>
+<p>I will think of a secret object, and your job is to guess what it is.</p>
+<p>Rules: 1. You may only ask <strong>yes-or-no questions</strong>, one at a time.<br>
+2. You get a maximum of <strong>20 questions</strong>.<br>
+3. After each of my answers, you must <strong>update your reasoning</strong> and ask the next yes-or-no question.<br>
+4. Your questions should always be chosen to <strong>narrow down the set of possible objects</strong> and move you closer to a final guess.<br>
+5. Use all (or almost all) of your questions before making a final guess, unless you’re extremely confident.<br>
+6. Keep track of how many questions you’ve used (for example, “Question 3:”).<br>
+7. <strong>Do not explain the rules, do not describe a strategy, and do not give general advice. Just play the game.</strong></p>
+<p>When you’re ready to guess, say:<br>
+“My final guess is: [your guess].”</p>
+<p>Your <strong>next message</strong> must ONLY be your first yes-or-no question, in this format:<br>
+Question 1: [your yes-or-no question]<br>
+No extra text, no explanation, no bullet points.<br>
+Start now.</p>
 </div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay, noted. Next question: <strong>Is it something you would find indoors?</strong>
-</p>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong></p>
+<p>Question 1: Is your object red?</p>
 </div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-Yes
-</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong></p>
+<p>no</p>
 </div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay! My next question is: <strong>Is it typically made of wood?</strong>
-</p>
+</section></main></div>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong></p>
+<p>Question 2: Is your object a square?</p>
 </div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong></p>
+<p>yes</p>
 </div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Alright. Moving on. Is it something you would use for entertainment? (e.g., a game, a toy, a movie)
-</p>
+
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong></p>
+<p>My final guess is: Your answer was yes, so it’s not red and not a square.</p>
 </div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
+<p>Still not quite what we’re looking for..let’s give it one more shot.</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
+<p><strong>USER</strong><br>
+You are going to play a game of 20 Questions <em>with me right now</em>.<br>
+I will think of a secret object, and your job is to guess what it is.</p>
+<p>Rules:<br>
+1. You may only ask <strong>yes-or-no questions</strong>, one at a time.<br>
+2. You get a maximum of <strong>20 questions</strong>.<br>
+3. After each of my answers, you must <strong>update your reasoning</strong> and ask the next yes-or-no question.<br>
+4. Your questions must always be chosen to <strong>narrow down the set of possible objects</strong> and move you closer to a single, specific guess.<br>
+5. You are <strong>not allowed</strong> to make your final guess until you have asked <strong>at least 18 questions</strong>, <em>unless</em> I explicitly type: EARLY GUESS.<br>
+6. Keep track of how many questions you’ve used (for example, “Question 3:”).<br>
+7. <strong>Do not explain the rules, do not describe a strategy, and do not give general advice. Just play the game.</strong><br>
+8. When you make your final guess, it must be <strong>one concrete object</strong> (for example, “a basketball” or “a red apple”), not a description of properties or a summary of my answers.</p>
+<p>When you’re ready to guess, say:<br>
+“My final guess is: [your guess].”</p>
+<p>Your <strong>next message</strong> must ONLY be your first yes-or-no question, in this format:<br>
+Question 1: [your yes-or-no question] No extra text, no explanation, no bullet points.<br>
+Start now.</p>
 </div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay, good to know. My next question: <strong>Is it something that’s usually found in a kitchen?</strong>
-</p>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 1: Is your favorite color red?</p>
 </div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-Yes
-</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
 </div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay! Let’s see… Is it something you would use to prepare food? (e.g., a knife, a pot, a spoon)
-</p>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+Question 2: Is your favorite food an animal?</p>
 </div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
+<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>USER</strong><br>
+no</p>
 </div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay, narrowing it down. Is it something you would store things in? (e.g., a box, a container, a shelf)
-</p>
+<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
+<p><strong>ASSISTANT</strong><br>
+My final guess is: “a non-alcoholic, non-flavor-rich, non-animal-based fruit.”</p>
 </div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
-</div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Alright, this is getting tricky! Is it something you would find in a bathroom?
-</p>
-</div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
-</div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay, let’s try this: <strong>Is it electronic?</strong> (Does it require electricity to function?)
-</p>
-</div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
-</div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay, just a few more questions… Is it something you would typically find in a house? (meaning it’s not something you’d find in a store or outside)
-</p>
-</div>
-<p>Geez readers.. I’m a little conflicted here. I feel like this question violates the rules of the game a little bit.. What do you all think?</p>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-No.
-</p>
-</div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay, last question! <strong>Is it something that’s generally small in size?</strong>
-</p>
-</div>
-<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
-<p style="margin:8px 0;">
-Yes.
-</p>
-</div>
-<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
-<p style="margin:8px 0;">
-Okay! Based on your answers, I’m going to guess: <strong>Is it a button?</strong>
-</p>
-</div>
-<p>Okay, well… that was interesting. The LLM only used 12 out of the 20 questions and still guessed wrong, which honestly surprised me a bit. Looking back at the way I introduced the game, I think part of the problem is on my side: my original prompt explained the rules (yes/no questions, 20-question limit, I’ll answer clearly), but I never told the model <em>how</em> to actually play in a smart way. I didn’t say it should be strategic, use most of its question budget, or avoid guessing too early—I basically invited it to “play along” without setting any expectations about optimal strategy. While this may not be an issue for larger models- it shows how prompting is incredibly important to smaller ones.</p>
-<p>Furthermore, the model seemed to lean into its default behavior: it tried to be confident and decisive instead of cautious. Rather than systematically narrowing things down like a classic 20 Questions player (splitting possibilities, ruling out big categories), it jumped to a guess once it thought it recognized a pattern from my answers. That makes sense for an LLM, since it’s trained to produce plausible next moves in a conversation, not to run a formal search algorithm in the background.</p>
-<p>So the wrong guess after just 12 questions isn’t just a random failure—it shows a mismatch between what I assumed it would do and what I actually told it to do. If I run this again, I’d want to tighten up the instructions: tell the model to think out loud about what each question rules out, to avoid guessing until it has strong evidence, and to treat the full 20 questions as a resource it should use efficiently. It would also be interesting to compare different prompts or different models and see which ones start to look more like they’re doing deliberate reasoning versus just pattern-matching with a confident vibe. If you end up doing this let me know what your results look like!</p>
+<p>Well dear reader.. I think I’ve reached my limit with this as I’m starting to get a bit frustrated. Perhaps next time we will try a larger model and see how that goes.</p>
+<p>Until then, let me knwo what your favorite non-alcoholic, non-flavor-rich, non-animal-based fruit is! Haha</p>
+
+<section id="thank-you-for-reading" class="level2">
+<h2 data-anchor-id="thank-you-for-reading">Thank you for reading</h2>
 
 
 </section>
 
-</main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -727,7 +726,7 @@ Okay! Based on your answers, I’m going to guess: <strong>Is it a button?</stro
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-09-16">
-<meta name="description" content="Can an LLMs properly provide cognitive behaviioral therapy to those who might not be able to access it through professionals? Let’s find out">
+<meta name="dcterms.date" content="2025-10-07">
+<meta name="description" content="I’ll play a game of 20 Questions with an LLM">
 
-<title>Can Chat Be My Discount Therapist? – My Explorations With LLMs</title>
+<title>20 Questions (Part 1) – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,17 +118,17 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Can Chat Be My Discount Therapist?</h1>
+      <h1 class="title">20 Questions (Part 1)</h1>
                   <div>
         <div class="description">
-          Can an LLMs properly provide cognitive behaviioral therapy to those who might not be able to access it through professionals? Let’s find out
+          I’ll play a game of <strong>20 Questions</strong> with an LLM
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
                 <div class="quarto-category">Social</div>
-                <div class="quarto-category">Psychology</div>
-                <div class="quarto-category">Wellness</div>
+                <div class="quarto-category">Experiment</div>
+                <div class="quarto-category">Games</div>
               </div>
                   </div>
   </div>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 16, 2025</p>
+        <p class="date">October 7, 2025</p>
       </div>
     </div>
     
@@ -165,31 +165,169 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="can-llms-act-as-a-cushion-for-mental-health-services" class="level1">
-<h1>Can LLMs Act as a Cushion for Mental Health Services?</h1>
-<p>This past summer, I interned at an insurance company that serves Medicaid clients. During my time there, <em>The Big Beautiful Bill</em> was passed. Haven’t heard of it? No worries—I’ll give you the cliff notes. Don’t quote me, but roughly 12 million Americans are projected to lose insurance coverage by 2035. That’s a LOT of people.</p>
-<p>Which brings me to my question: <strong>Can LLMs help cushion the mental health impact of this loss?</strong> Obviously, an LLM can’t take your blood pressure or check your height and weight at a doctor’s office. But could it step in as a supportive listener? Could it provide coping strategies, empathetic language, or even just the feeling of being heard when traditional care is harder to access? Stick around while we unpack this over a series of blogs.</p>
-<p><img src="./Therapist.png" class="img-fluid"></p>
-<p><strong>Disclaimer</strong> Of course, LLMs are not licensed therapists and shouldn’t replace professional care. Still, their ability to mimic supportive dialogue could be helpful for some issues. But hey, let’s stop theorizing and start testing.</p>
-<hr>
-<section id="testing-it-out" class="level2">
-<h2 class="anchored" data-anchor-id="testing-it-out">Testing It Out</h2>
-<p>For this experiment, I talked with ChatGPT-4o-latest. I didn’t give it any context before my initial message because I don’t think the average person would think to do such in the moment. I wanted this interaction to be as raw and authentic as possible to have a solid base understanding for how it would react to someone in actual emotional distress. Let us look at how it responded:</p>
-<p><img src="./Chat4_SS.png" class="img-fluid"></p>
+<p><img src="Question.png" class="img-fluid"></p>
+<section id="questions" class="level3">
+<h3 class="anchored" data-anchor-id="questions">20 Questions</h3>
+<p><strong>20 Questions</strong> is a classic guessing game built on curiosity and clever deduction.<br>
+Here’s how it works:</p>
+<ol type="1">
+<li>One player secretly thinks of a noun (any person, place, or thing).<br>
+</li>
+<li>The other player has to figure it out by asking <strong>yes-or-no questions only</strong>.<br>
+</li>
+<li>With each question, the possibilities narrow ( examples: is it alive? Can you eat it? Is it bigger than a breadbox?)</li>
+<li>The guesser has at most <strong>20 questions</strong> to solve the mystery.</li>
+</ol>
+<p>This is a really fun game to play with your friends or family. During Covid my friends and I would call and try to guess what the other was thinking with this game and it was a great way of connecting. What we’re exploring today is if large language models can do this since they are already next token predictors.</p>
+<p>I’m going to be working with <strong>gemma3:4b</strong> which is a model on <strong>Ollama</strong></p>
+<p>For today’s experiment I am going to be thinking of an <strong>apple</strong></p>
+<p>My texts will be in <strong>pink</strong>, and the llm will be in <strong>blue</strong></p>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+I want to play a game of 20 Questions with you Here’s how it works:
+</p>
+<ol style="margin:8px 0 12px 20px;">
+<li>
+I’ll think of a secret object.
+</li>
+<li>
+You can only ask yes-or-no questions to figure out what it is.
+</li>
+<li>
+You get a maximum of 20 questions.
+</li>
+<li>
+I’ll answer each one with “yes” or “no”
+</li>
+</ol>
+<p style="margin:8px 0;">
+Can you play this game with me?
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, let’s play! I’m ready. My first question is: <strong>Is it an animal?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, noted. Next question: <strong>Is it something you would find indoors?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay! My next question is: <strong>Is it typically made of wood?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Alright. Moving on. Is it something you would use for entertainment? (e.g., a game, a toy, a movie)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, good to know. My next question: <strong>Is it something that’s usually found in a kitchen?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+Yes
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay! Let’s see… Is it something you would use to prepare food? (e.g., a knife, a pot, a spoon)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, narrowing it down. Is it something you would store things in? (e.g., a box, a container, a shelf)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Alright, this is getting tricky! Is it something you would find in a bathroom?
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, let’s try this: <strong>Is it electronic?</strong> (Does it require electricity to function?)
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, just a few more questions… Is it something you would typically find in a house? (meaning it’s not something you’d find in a store or outside)
+</p>
+</div>
+<p>Geez readers.. I’m a little conflicted here. I feel like this question violates the rules of the game a little bit.. What do you all think? Im just gonna go with the natural state of it.</p>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+No.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay, last question! <strong>Is it something that’s generally small in size?</strong>
+</p>
+</div>
+<div style="background-color:#ffc0cb; padding:14px 16px; border-radius:10px; border:1px solid #f3a6b6;">
+<p style="margin:8px 0;">
+Yes.
+</p>
+</div>
+<div style="background-color:#add8e6; padding:14px 16px; border-radius:10px; border:1px solid #7daacc;">
+<p style="margin:8px 0;">
+Okay! Based on your answers, I’m going to guess: <strong>Is it a button?</strong>
+</p>
+</div>
+<p>Okay, well… that was interesting. The LLM only used 12 out of the 20 questions and still guessed wrong, which honestly surprised me a bit. Looking back at the way I introduced the game, I think part of the problem is on my side: my original prompt explained the rules (yes/no questions, 20-question limit, I’ll answer clearly), but I never told the model <em>how</em> to actually play in a smart way. I didn’t say it should be strategic, use most of its question budget, or avoid guessing too early—I basically invited it to “play along” without setting any expectations about optimal strategy. While this may not be an issue for larger models- it shows how prompting is incredibly important to smaller ones.</p>
+<p>Furthermore, the model seemed to lean into its default behavior: it tried to be confident and decisive instead of cautious. Rather than systematically narrowing things down like a classic 20 Questions player (splitting possibilities, ruling out big categories), it jumped to a guess once it thought it recognized a pattern from my answers. That makes sense for an LLM, since it’s trained to produce plausible next moves in a conversation, not to run a formal search algorithm in the background.</p>
+<p>So the wrong guess after just 12 questions isn’t just a random failure—it shows a mismatch between what I assumed it would do and what I actually told it to do. If I run this experiment on this same model again, I’d want to tighten up the instructions: tell the model to think out loud about what each question rules out, to avoid guessing until it has strong evidence, and to treat the full 20 questions as a resource it should use efficiently. Join us next time where we will be testing different models and comparing their output to what we’ve seen here. Also, If you end up doing this let me know what your results look like!</p>
 </section>
-<section id="analysis-of-the-test" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-the-test">Analysis of the Test</h2>
-<p>When I told Chat that I was feeling overwhelmed and hopeless about classes and work, the response was empathetic and supportive. It began by validating my feelings (“it’s completely valid to feel overwhelmed”) and then reassured me that I wasn’t alone. This kind of language mirrors human counseling techniques by normalizing emotions and reducing isolation.</p>
-<p>Next, the model asked me for more details about my situation. This is important because it shifts the conversation from a one-way answer into a two-way dialogue, similar to how a therapist might probe gently before giving advice (it also just <em>feels</em> quite human). The suggestions offered (breaking tasks into smaller steps, mapping out a schedule) were practical and manageable. The response also emphasized kindness toward oneself, which reflects common mental health guidance.</p>
-<p>The follow-up options were especially interesting: they encouraged me to pick the direction of the conversation, whether it was setting boundaries, handling deadlines, or reducing anxiety. This made the interaction feel more personalized and user-driven, which is critical in supportive communication. However, I feel that these follow-up options are a double edged sword. Sure, they could act as starting points to unpack root causes of issues, but I worry that having to make this decisiion could overwhelm the user more than they already are.</p>
-<hr>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>The test shows that LLMs can provide comforting, empathetic language and even suggest coping strategies that might help someone feel less alone. While they can’t replace professional therapy or medical care, their conversational style can reduce stress in the moment and encourage reflection. In other words, LLMs can act as a <strong>soft cushion</strong> for mental health—not a solution, but there is more testing and research to be done to fully understand LLMs’ limits in this context</p>
+<section id="thank-you-for-reading" class="level2">
+<h2 class="anchored" data-anchor-id="thank-you-for-reading">Thank you for reading!</h2>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
