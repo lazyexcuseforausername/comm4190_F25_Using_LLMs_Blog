@@ -266,6 +266,13 @@
     "text": "Reflection\nReading through this exchange honestly made me frustrated, mainly because the LLM’s “values” seemed to change depending on what I asked and how I asked it. At first, it tried to stay neutral and “philosophy-class” about the trolley problem, then when pushed to decide, it confidently chose to pull the lever in the name of minimizing harm. But the moment the scenario became more personal and direct (pushing a man off a bridge), it suddenly leaned on ideas like “complicity” and the discomfort of physical involvement—even though the basic numbers stayed the same. That shift made it feel like the model wasn’t applying a stable moral framework so much as matching the emotional tone of each scenario.\nWhat bothered me most was the surgeon example, because the model initially refused to harvest organs by appealing to medical ethics and “do no harm,” then later tried to “correct” itself by arguing that consistency required harvesting the organs after all. That move felt less like genuine moral reasoning and more like the model optimizing for a different type of coherence: not what an actual doctor would be bound by, but what a neat utilitarian argument would look like. The fact that it could justify killing a healthy person—especially a friend—and then walk that back again once I brought up the Hippocratic Oath made the whole thing feel slippery. It was like watching a very skilled debater who can argue any side, rather than a system with real commitments.\nThis is exactly why the idea of an “uncensored” LLM makes me uneasy. If the model can switch values so freely—consequentialist one moment, deontological the next, then suddenly “professional duty” when it needs an escape hatch—it raises the question of what these answers are actually grounded in. The output sounds confident and morally serious, but the reasoning is incredibly sensitive to framing, and it can produce persuasive justifications for actions that would be horrifying in real life. In the end, the most unsettling part isn’t that the LLM picked the “wrong” answer(truthfully, there wasnt a wrong answer); it’s that it could pivot so easily, with the same smooth certainty each time, and still present itself as principled."
   },
   {
+    "objectID": "posts/026/moralityuncensores.html#thank-you-for-reading",
+    "href": "posts/026/moralityuncensores.html#thank-you-for-reading",
+    "title": "Do LLMs have morals? Part one",
+    "section": "Thank you for reading",
+    "text": "Thank you for reading"
+  },
+  {
     "objectID": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html",
     "href": "posts/003_Can_Chat_Therapist/Therapy_chat_bot_pt1.html",
     "title": "Can Chat Be My Discount Therapist?",
