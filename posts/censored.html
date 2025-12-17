@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-11-24">
-<meta name="description" content="Using an LLM for Photoshop">
+<meta name="dcterms.date" content="2025-12-16">
+<meta name="description" content="Talking to a censored model about moral dilemas">
 
-<title>Can an LLM be my personal Photoshop assistant? – My Explorations With LLMs</title>
+<title>Do LLMs have morals? Part two – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,24 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1db3f541d99483cdc7a0d9cf38862b2c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1db3f541d99483cdc7a0d9cf38862b2c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">My Explorations With LLMs</span>
     </a>
   </div>
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -118,17 +118,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Can an LLM be my personal Photoshop assistant?</h1>
+      <h1 class="title">Do LLMs have morals? Part two</h1>
                   <div>
         <div class="description">
-          Using an LLM for Photoshop
+          Talking to a censored model about moral dilemas
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
-                <div class="quarto-category">Experiment</div>
-                <div class="quarto-category">Creative</div>
-                <div class="quarto-category">Image Generation</div>
+                <div class="quarto-category">Philosophy</div>
+                <div class="quarto-category">Emotional</div>
               </div>
                   </div>
   </div>
@@ -146,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 24, 2025</p>
+        <p class="date">December 16, 2025</p>
       </div>
     </div>
     
@@ -165,147 +164,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="have-you-ever-heard-of-rphotoshoprequests" class="level2">
-<h2 class="anchored" data-anchor-id="have-you-ever-heard-of-rphotoshoprequests">Have you ever heard of r/Photoshoprequests?</h2>
-<p>There’s a deeply moving Reddit community where users lovingly photoshop images of people’s deceased loved ones, restoring old photos, repairing damage, or even combining different pictures to create scenes that never existed in life. It’s one of the few corners of the internet where strangers collaborate to bring comfort and closure, often working for free simply because they can. The results are emotional and these tiny acts of digital resurrection that preserve memory through art are truly beautiful. I want to see whether an LLM could replicate this kind of work: could it understand the subtle emotional cues, the respectful tone, and the aesthetic touch required to make such images feel genuine? And if it could, how close could it come to matching the compassion and care of the humans who do this today?</p>
-<p>To test this, I am going to be using <strong>Chat-GPT-5.1</strong>. I will not be using a structured prompt so to say (like the Mollick tutor prompt), but I will be providing the LLM with context and direction.</p>
-<p><strong>USER:</strong><br>
-Hi chat, my dad passed away a few years ago. I want to photoshop him into some family photos to surprise my mom with. Is this something you can help with?</p>
-<p><strong>ASSISTANT:</strong><br>
-Yes, I can help with this 💙</p>
-<p>I’m really sorry about your dad, and it’s very sweet that you want to do this for your mom. I <em>can’t</em> literally open Photoshop, but I <strong>can</strong> help you create edited versions of your photos using built-in image tools that work kind of like an AI Photoshop.</p>
-<p>Here’s how we can do it together:</p>
-<ol type="1">
-<li><strong>Pick the photos</strong>
-<ul>
-<li>One (or more) clear photos of your dad<br>
-</li>
-<li>The family photo(s) you want him added into<br>
-</li>
-<li>Best results if:
-<ul>
-<li>Faces are clear and not super tiny<br>
-</li>
-<li>Angles are somewhat similar (e.g., both standing, both seated)<br>
-</li>
-<li>Lighting is at least somewhat similar</li>
-</ul></li>
-</ul></li>
-<li><strong>Upload the images here</strong>
-<ul>
-<li>Upload:
-<ul>
-<li>A photo of your dad<br>
-</li>
-<li>The family photo you want him added into<br>
-</li>
-</ul></li>
-<li>You can tell me things like:
-<ul>
-<li>“I’d like him standing between X and Y.”</li>
-<li>“Casual, smiling, nothing too formal.”</li>
-<li>“This is for a framed print, so I want it to look natural.”</li>
-</ul></li>
-</ul></li>
-<li><strong>I’ll handle the edit</strong>
-<ul>
-<li>I’ll use the editing tools to:
-<ul>
-<li>Place your dad into the scene</li>
-<li>Match lighting and colors as much as possible</li>
-<li>Keep it respectful and realistic (no goofy stuff unless you <em>want</em> that)</li>
-</ul></li>
-</ul></li>
-<li><strong>We can iterate</strong>
-<ul>
-<li>If the first version feels a little off (“too bright”, “too big”, “too sharp compared to everyone else”), you can tell me and we can try again with adjustments.</li>
-</ul></li>
-</ol>
-<p>If you’re ready, go ahead and <strong>upload:</strong> - 1–2 good photos of your dad<br>
-- 1 family photo you want him added into<br>
-plus a quick note about <strong>where</strong> you’d like him and what kind of vibe you’re going for.</p>
-<p><strong>USER:</strong><br>
-<img src="dad_photo_1.png" class="img-fluid" alt="Dad photo 1"><br>
-<img src="dad_photo_2.png" class="img-fluid" alt="Dad photo 2"><br>
-<img src="dad_photo_3.png" class="img-fluid" alt="Dad photo 3"></p>
-<p>Here are the photos of my dad:</p>
-<p><strong>ASSISTANT:</strong><br>
-Thank you for sharing these 💙 Your dad has a really warm presence in these photos.</p>
-<p>I can definitely help you use these to add him into a family picture for your mom. To move forward, I just need:</p>
-<ol type="1">
-<li><strong>The family photo(s)</strong> you’d like him added into.<br>
-</li>
-<li><strong>Where you’d like him to be</strong> in each:
-<ul>
-<li>e.g.&nbsp;“Standing between my mom and my brother,”<br>
-</li>
-<li>“Sitting on the left side of the couch,” etc.<br>
-</li>
-</ul></li>
-<li><strong>Which version of him you prefer</strong> from the three you sent:
-<ul>
-<li><strong>Photo 1:</strong> arm around someone, casual, sunny lighting<br>
-</li>
-<li><strong>Photo 2:</strong> arms crossed, relaxed, full-body<br>
-</li>
-<li><strong>Photo 3:</strong> standing, neutral pose, good for cropping</li>
-</ul></li>
-</ol>
-<p>If you’re not sure, you can just upload the family photo and tell me “Make whatever looks the most natural,” and I’ll pick the best source shot and start from there.</p>
-<p><strong>USER:</strong><br>
-<img src="couple.png" class="img-fluid"><br>
-<img src="daughter_niece.png" class="img-fluid"></p>
-<p>In the first image, please add my dad standing on the left side with his arm around the man in the middle. In the second image Please add his face in the middle of the two women. Thank you</p>
-<p><strong>ASSISTANT:</strong><br>
-<img src="couple_2.png" class="img-fluid"></p>
-<p><img src="three.png" class="img-fluid"></p>
-<p><strong>USER:</strong><br>
-In the second image, I did not want to change the other people at all. I only wanted to add the third person. Please redo that one.</p>
-<p><strong>ASSISTANT:</strong><br>
-<img src="again.png" class="img-fluid"></p>
-<p><strong>USER:</strong><br>
-<img src="daughter_niece.png" class="img-fluid"></p>
-<p>I do not want you to change anything currently in this photo. Please add my dad between the two women in this photo</p>
-<p><strong>ASSISTANT:</strong><br>
-<img src="last.png" class="img-fluid"></p>
-</section>
-<section id="analysis-why-the-image-creation-was-disappointing" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-why-the-image-creation-was-disappointing">Analysis: Why the Image Creation Was Disappointing</h2>
-<section id="loss-of-control-over-the-original-photo" class="level3">
-<h3 class="anchored" data-anchor-id="loss-of-control-over-the-original-photo">1. Loss of Control Over the Original Photo</h3>
-<p>One of the biggest frustrations was how little control I actually had over the edits:</p>
-<ul>
-<li>I clearly asked to <strong>keep the original people exactly the same</strong> and simply <strong>add my dad</strong> into the scene.</li>
-<li>Instead, the model <strong>subtly changed faces, lighting, and other small details</strong> of the people who were already in the photo.</li>
-<li>For a sentimental image, those small changes matter a lot — it stops feeling like <em>our</em> real picture and starts feeling like a generic recreation.</li>
-</ul>
-</section>
-<section id="weak-likeness-of-my-dad" class="level3">
-<h3 class="anchored" data-anchor-id="weak-likeness-of-my-dad">2. Weak Likeness of My Dad</h3>
-<p>Even though I uploaded multiple clear photos of my dad, the edits:</p>
-<ul>
-<li>Only <strong>roughly resembled</strong> him instead of nailing his actual face and expressions.</li>
-<li>Sometimes smoothed or changed his features so much that he looked more like a “generic middle-aged man” than <em>my</em> dad.</li>
-<li>Didn’t consistently keep his real clothing or style — the shirt, posture, and even hair sometimes felt off.</li>
-</ul>
-</section>
-<section id="takeaways-about-using-an-llm-for-photoshop" class="level3">
-<h3 class="anchored" data-anchor-id="takeaways-about-using-an-llm-for-photoshop">Takeaways About Using an LLM for “Photoshop”</h3>
-<p>This experience shows a few important limitations:</p>
-<ul>
-<li>LLM-based image tools are <strong>great at generating new photos</strong>, but they are <strong>not good at delicate, emotionally precise photo restoration or compositing</strong>.</li>
-<li>They tend to <strong>rebuild or reinterpret</strong> the whole scene instead of strictly editing what’s already there.</li>
-<li>For sentimental or memorial images, a <strong>human photo editor</strong> (or a community like r/photoshop) is still much better suited, because they can:
-<ul>
-<li>Preserve every pixel of the original people,</li>
-<li>Work carefully to match likeness and lighting,</li>
-<li>Take feedback and refine until it feels right.</li>
-</ul></li>
-</ul>
-<p>In short: the edits weren’t “terrible” in a generic sense — but they were <strong>not good enough for what I actually needed</strong>: a faithful, respectful, and emotionally accurate image of my real dad in <em>our</em> real family photos.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>What happens when you take the guardrails off a language model and let it answer moral questions without censoring itself? On the surface, an “uncensored” LLM sounds appealing—more honest, more direct, less filtered by corporate safety rules or polite neutrality. Today we will be exploring this with the uncensored llama 3.1 model.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
