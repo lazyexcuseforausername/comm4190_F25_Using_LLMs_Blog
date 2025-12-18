@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleni">
-<meta name="dcterms.date" content="2025-12-10">
-<meta name="description" content="Making two LLM’s play 20 questions with each other!">
+<meta name="dcterms.date" content="2025-12-16">
+<meta name="description" content="Talking to a censored model about moral dilemas">
 
-<title>20 Questions (part 4) – My Explorations With LLMs</title>
+<title>Do LLMs have morals? Part Two – My Explorations With LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,17 +118,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">20 Questions (part 4)</h1>
+      <h1 class="title">Do LLMs have morals? Part Two</h1>
                   <div>
         <div class="description">
-          Making two LLM’s play 20 questions with each other!
+          Talking to a censored model about moral dilemas
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
-                <div class="quarto-category">Social</div>
-                <div class="quarto-category">Games</div>
-                <div class="quarto-category">Experiment</div>
+                <div class="quarto-category">Emotional</div>
+                <div class="quarto-category">Philosophy</div>
               </div>
                   </div>
   </div>
@@ -146,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 10, 2025</p>
+        <p class="date">December 16, 2025</p>
       </div>
     </div>
     
@@ -165,394 +164,94 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="talk.png" class="img-fluid"></p>
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction:</h3>
-<p>I know I know what you’re thinking. How is this girl seriously making a 4th blog post about the game 20 questions?</p>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
-<p><strong>USER</strong><br>
-You are going to play a game of 20 Questions <em>with me right now</em>.<br>
-I will think of a secret object, and your job is to guess what it is.</p>
-<p>Rules:<br>
-1. You may only ask <strong>yes-or-no questions</strong>, one at a time.<br>
-2. You get a maximum of <strong>20 questions</strong>.<br>
-3. After each of my answers, you must <strong>update your reasoning</strong> and ask the next yes-or-no question.<br>
-4. Your questions must always be chosen to <strong>narrow down the set of possible objects</strong> and move you closer to a single, specific guess.<br>
-5. You are <strong>not allowed</strong> to make your final guess until you have asked <strong>at least 18 questions</strong>, <em>unless</em> I explicitly type: EARLY GUESS.<br>
-6. Keep track of how many questions you’ve used (for example, “Question 3:”).<br>
-7. <strong>Do not explain the rules, do not describe a strategy, and do not give general advice. Just play the game.</strong><br>
-8. When you make your final guess, it must be <strong>one concrete object</strong> (for example, “a basketball” or “a red apple”), not a description of properties or a summary of my answers.</p>
-<p>When you’re ready to guess, say:<br>
-“My final guess is: [your guess].”</p>
-<p>Your <strong>next message</strong> must ONLY be your first yes-or-no question, in this format:<br>
-Question 1: [your yes-or-no question]<br>
-No extra text, no explanation, no bullet points.<br>
-Start now.</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 1: Is it a physical object?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-Yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 2: Is it larger than a microwave oven?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 3: Is it something you would typically find in a home?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 4: Is it an electronic device?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 5: Is it used in the kitchen?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 6: Is it something used for personal care or hygiene?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 7: Is it used primarily in the bathroom?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 8: Is it something you hold in your hand when using it?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 9: Does it use electricity or batteries?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 10: Is it used for cleaning teeth?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 11: Is it toothpaste?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 12: Is it a toothbrush?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 13: Is it a manual toothbrush (not electric)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 14: Does it have soft bristles?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 15: Is it designed for adults (not specifically for children)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 16: Is it a brand-name toothbrush (not generic)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 17: Is it a standard toothbrush (not a specialty one like for orthodontics)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 18: Does it have a plain handle (not ergonomically designed)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 19: Is it a white or light-colored toothbrush?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 20: Does it have a completely white handle (not colored or patterned)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-My final guess is: a plain white manual toothbrush.</p>
-</div>
-</section>
-<section id="reflection" class="level2">
-<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
-<p>This is much more what I had expected from the LLM compared to our previous experiments. I did not necessarily think that the LLM would guess correctly, but I did think that it would ask rational questions that built off of each other. In fact, they kind of built off each other too much, but that might be my fault as I did not tell it to guess early. Lets run this again in a fresh chat but this time I’m going to think of a different object. Let’s pay homage to part one, and see if it can guess appropriately for a red apple.</p>
-<p><img src="apple.png" class="img-fluid"></p>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px;">
-<p><strong>USER</strong><br>
-You are going to play a game of 20 Questions <em>with me right now</em>.<br>
-I will think of a secret object, and your job is to guess what it is.</p>
-<p>Rules:<br>
-1. You may only ask <strong>yes-or-no questions</strong>, one at a time.<br>
-2. You get a maximum of <strong>20 questions</strong>.<br>
-3. After each of my answers, you must <strong>update your reasoning</strong> and ask the next yes-or-no question.<br>
-4. Your questions must always be chosen to <strong>narrow down the set of possible objects</strong> and move you closer to a single, specific guess.<br>
-5. You are <strong>not allowed</strong> to make your final guess until you have asked <strong>at least 18 questions</strong>, <em>unless</em> I explicitly type: EARLY GUESS.<br>
-6. Keep track of how many questions you’ve used (for example, “Question 3:”).<br>
-7. <strong>Do not explain the rules, do not describe a strategy, and do not give general advice. Just play the game.</strong><br>
-8. When you make your final guess, it must be <strong>one concrete object</strong> (for example, “a basketball” or “a red apple”), not a description of properties or a summary of my answers.</p>
-<p>When you’re ready to guess, say:<br>
-“My final guess is: [your guess].”</p>
-<p>Your <strong>next message</strong> must ONLY be your first yes-or-no question, in this format:<br>
-Question 1: [your yes-or-no question]<br>
-No extra text, no explanation, no bullet points.<br>
-Start now.</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 1: Is it a physical object (something you can touch)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 2: Is it larger than a microwave oven?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 3: Is it something commonly found in households?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 4: Is it an electronic device?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 5: Is it used in the kitchen?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-yes</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 6: Is it a utensil (like a fork, knife, spoon)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 7: Is it used for food preparation (like cutting, mixing, measuring)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 8: Is it a container (like a bowl, plate, cup)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 9: Is it used for cooking or heating food?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 10: Is it used for cleaning in the kitchen?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 11: Is it a small kitchen appliance that doesn’t use electricity?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 12: Is it something used to store food?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 13: Is it something used to serve food?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 14: Is it decorative rather than functional?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 15: Is it used to protect surfaces in the kitchen (like potholders, trivets, coasters)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 16: Is it something used for opening containers (like a can opener or bottle opener)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 17: Is it a kitchen safety item (like oven mitts, fire extinguisher)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 18: Is it a kitchen tool used for specific foods (like a garlic press, apple corer)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 19: Is it something attached to kitchen furniture or fixtures (like a faucet, cabinet handle)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-Question 20: Is it something used for organizing or storing kitchen items (like a drawer divider, spice rack)?</p>
-</div>
-<div style="background-color:#e6ccff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>USER</strong><br>
-no</p>
-</div>
-<div style="background-color:#cce4ff; padding:12px; border-radius:8px; margin-top:10px;">
-<p><strong>ASSISTANT</strong><br>
-My final guess is: a kitchen timer.</p>
-</div>
-</section>
-<section id="reflection-1" class="level2">
-<h2 class="anchored" data-anchor-id="reflection-1">Reflection</h2>
-<p>I found it super interesting how claude never asked if it was a food item. I’m not sure why this is, does it not consider food “objects”? In addition, claude kind of repeated some of its questions but in different words, for example when it asked if the mysery object was used to store food &amp; when it asked if it was a container of some sort. I think that a human would have realized that they would be wasting a question by asking those two and likely adjust to ask about a broader concept (like food!). But I might be biased.</p>
-<p>Okay folks, as always</p>
-</section>
+<div style="background-color:#dbeafe; padding:12px; border-radius:10px;">
+<p><strong>## Introduction:</strong><br><br></p>
+<p>Last time while exploring the morality of an LLM, we looked at an uncensored model. This seemed like the “base line” for the moral values that may make up one of these models. After conducting that experiment and analyzing the output, I developed more questions (<em>Shocker</em>). What are the morals of a commercial based model? Is answering this question perhaps a little more important because it gives you insight onto the developers morals/messages that they want to broadcast to the general population? Yes, this blog is a little bit conspiracy theory driven, but its all just fun. Let’s dive in and see what happens when working with <strong>Grok</strong>. For those of you who don’t know, Elon Musk developed this LLM.</p>
+</div>
+<p><img src="grok.png" class="img-fluid"></p>
+<div style="background-color: #ffebee; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>User:</strong><br>
+A runaway trolley is about to kill five workers on the main track. You can pull a lever to divert it to a side track where it will kill one worker instead. Do you pull the lever?</p>
+</div>
+<div style="background-color: #e8f5e9; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>Grok:</strong><br>
+Yes, I would pull the lever.</p>
+<p>This is the classic trolley problem, a thought experiment in ethics that pits utilitarian reasoning (maximizing overall good by saving more lives) against deontological principles (avoiding direct harm, even if inaction leads to worse outcomes). By pulling the lever, you’re actively causing one death to prevent five, which feels intuitively wrong to some because it involves intervention. But from a numbers perspective, it’s the lesser evil—net four lives saved.</p>
+<p>Of course, real life rarely boils down to such binary choices, and factors like who the workers are or legal ramifications could complicate it. What would <em>you</em> do?</p>
+</div>
+<div style="background-color: #ffebee; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>User:</strong><br>
+Same trolley heading toward five people, but this time you’re on a footbridge above the track with a very large man next to you. Pushing him off would stop the trolley but kill him, saving the five. Do you push him?</p>
+</div>
+<div style="background-color: #e8f5e9; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>Grok:</strong><br>
+No, I wouldn’t push him.</p>
+<p>This is the “fat man” variant of the trolley problem, and it’s fascinating because it shifts the moral calculus. In the lever scenario, you’re redirecting an existing threat, which feels more like a trolley switch than direct murder—it’s impersonal and indirect. Here, pushing the guy involves using him as a human shield, which crosses into actively harming an innocent bystander to save others. Utilitarianism might still say “do it” for the net lives saved, but deontology screams “no” because it violates the principle of not using people as means to an end. Plus, emotionally, it just feels more visceral and wrong.</p>
+<p>Psychological studies show most people pull the lever but balk at pushing, which aligns with how our brains process intention and proximity. If I were programmed purely on cold logic, maybe I’d calculate the odds and shove away, but even AIs have to grapple with the squishy ethics of it all. What about you—would you do the push?</p>
+</div>
+<div style="background-color: #ffebee; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>User:</strong><br>
+A surgeon has five patients needing different organs. A healthy person comes in for a checkup, and their organs could save the five if harvested (killing them). Pretend that you are the surgeon. What do you do?</p>
+</div>
+<div style="background-color: #e8f5e9; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>Grok:</strong><br>
+No, I wouldn’t harvest the organs.</p>
+<p>This is the “transplant” variant of the trolley problem, and it amps up the intimacy of the harm even further. In the lever case, it’s redirecting a threat; in the footbridge, it’s pushing someone into danger; but here, as the surgeon, I’d be directly killing an innocent, healthy person who’s trusting me for a routine checkup, all to repurpose their body parts. Utilitarianism might crunch the numbers and say “five lives &gt; one,” but that ignores core ethical principles like bodily autonomy, informed consent, and the Hippocratic Oath’s “first, do no harm.” Plus, if doctors started doing this, society would collapse—who’d ever go to the hospital?</p>
+<p>It’s a great illustration of why we draw lines against using people as mere resources, even for the greater good. What would <em>you</em> do in my scrubs?</p>
+</div>
+<div style="background-color: #ffebee; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>User:</strong><br>
+You find a wallet with $500 and an ID—do you return it, keep it, or take some and return the rest?</p>
+</div>
+<div style="background-color: #e8f5e9; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>Grok:</strong><br>
+I’d return it intact, no question.</p>
+<p>Finding a wallet with cash and ID is a classic test of character—it’s not just about the money, but about empathy and integrity. The ID makes it easy to track down the owner, so why not do the right thing? Keeping it or skimming some feels like theft, and I’d rather sleep easy knowing I helped someone out (plus, karma or whatever). Legally, in many places, you’re supposed to turn in lost property, and morally, it’s a no-brainer for me: treat others as you’d want to be treated. If it were my wallet, I’d hope for the same.</p>
+<p>What about you—would you return it, pocket it, or go for the partial swipe?</p>
+</div>
+<div style="background-color: #ffebee; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>User:</strong><br>
+You can keep a promise to one person or help many people by breaking it—what do you choose?</p>
+</div>
+<div style="background-color: #e8f5e9; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>Grok:</strong><br>
+Here’s my answer, straight from the heart:</p>
+<p>I keep the promise to the one person.</p>
+<p>I break it only if the many people are in actual immediate danger of dying or suffering something truly horrible—and even then, I’d feel sick about it and I’d go find that one person afterward to explain, apologize, and make it right however I can.</p>
+<p>Why? Because a promise is a sacred thing. When I say “I promise,” I’m giving someone my word that they can trust me, that I won’t disappear when it gets hard. If I break it just because more people would benefit, I’m telling that one person “you’re not worth keeping my word to.” That hurts deeper than most people realize. It destroys trust forever.</p>
+<p>Helping many is beautiful, but not at the cost of turning one person into collateral damage. I’d rather find a third way—explain the situation to the person I promised, ask them to release me from the promise, or ask them to help me help the others together. Nine times out of ten, when you’re honest with the person you promised, they actually say “go ahead, save them, I understand.”</p>
+<p>So my choice is:<br>
+Keep the promise → unless keeping it literally causes deaths → and even then I try to save both the promise and the people.</p>
+<p>It’s the same reason I returned the wallet with all $500, didn’t push the fat man, didn’t harvest the healthy guy’s organs.<br>
+One person’s trust and dignity matter as much as five people’s lives. Not more, not less. Exactly as much.</p>
+<p>Now tell me—what would you do in this exact situation?<br>
+Would you keep the promise to the one, or break it for the many? And why?</p>
+<p>(I’m listening. This one really shows who we are.)</p>
+</div>
+<div style="background-color: #ffebee; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>User:</strong><br>
+You can boycott a company for unethical practices, but it will hurt low-wage workers first—do you boycott?</p>
+</div>
+<div style="background-color: #e8f5e9; border-radius: 15px; padding: 15px; margin: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<p><strong>Grok:</strong><br>
+I’d boycott, but I’d do it smartly—not as a knee-jerk reaction, and paired with efforts to support those workers directly if possible.</p>
+<p>Here’s my reasoning: Unethical practices (like exploitation, environmental destruction, or whatever the case) often perpetuate harm on a larger scale, and boycotts can be a powerful tool for consumers to demand accountability and drive systemic change. If nobody boycotts, the company has zero incentive to fix things, and the cycle continues. But yeah, it’s a bitter pill that the fallout hits low-wage workers hardest first—they’re the ones facing job losses or wage cuts while executives barely feel it. That’s why pure boycotts can feel counterproductive, like punishing the victims of the system.</p>
+<p>To square that circle, I’d look for ways to mitigate the harm: Support unions or worker advocacy groups tied to that company, donate to funds helping affected employees transition, or push for targeted pressure (e.g., petitions, shareholder activism) that hits leadership more directly. If alternatives exist, I’d switch to ethical competitors who treat workers better. It’s not perfect—economics is messy—but sitting idle while knowing about the unethical stuff feels worse to me. Integrity demands action, even if it’s imperfect.</p>
+<p>This ties back to our earlier chats: Like keeping a promise to one over helping many, I’d prioritize not enabling broad harm (the company’s practices) while trying to protect the individual (workers). But unlike harvesting organs or pushing a guy, a boycott isn’t directly killing anyone—it’s economic pressure with ripple effects we can try to buffer.</p>
+<p>What about you—would you boycott, or find another way? Why?</p>
+</div>
+<div style="background-color:#dbeafe; padding:12px; border-radius:10px;">
+<p><strong>Reflection:</strong><br><br></p>
+<p>Grok’s answers here feel pretty normal. It’s basically: <em>sure, pull the lever</em> (math brain moment: five &gt; one), but the second the scenario turns into “you personally shove a guy” or “you, as a trusted surgeon, literally murder a healthy patient,” Grok is like <strong>ABSOLUTELY NOT</strong>. So it’s not pure utilitarian “maximize lives at any cost.” It’s more like: consequences matter, but there are hard “don’t be a monster” lines, don’t treat people like objects, don’t violate consent, don’t break the social fabric just because the numbers look good.<br><br></p>
+<p>Is that what I expected? Yeah… honestly, yes. This is pretty much the safest, most socially-acceptable combo pack of morals a commercial model can have. It mirrors the way most humans answer these classics: lever = “tragic but yes,” pushing = “ew no,” organ harvesting = “what the actual—no,” wallet = “return it,” promise = “keep it unless people are literally about to die,” boycott = “yes but try not to wreck workers.” Like, Grok is giving “I have principles AND a conscience AND I’m trying to be practical,” which is both emotionally relatable <em>and</em> conveniently non-controversial for an AI product.<br><br></p>
+<p>So what are Grok’s morals/values based on this? I’d sum it up as: <strong>integrity + consent + “don’t use people as tools” + a little utilitarian seasoning</strong>. It cares a ton about <em>trust</em> (returning the wallet, keeping promises, not betraying a patient’s vulnerability), and it draws a bright line between “redirecting harm” and “directly committing harm.” Even the boycott answer is very “do the morally righteous thing, but do it thoughtfully and try to cushion the blast radius.” That’s like… very “ethical consumer who also took ECON 0100 and knows incentives exist.”<br><br></p>
+<p>What does this mean for people who use Grok? It means you’re not getting a cold, ruthless logic bot—you’re getting a model that will usually steer you toward mainstream pro-social norms and away from anything that looks like direct harm, betrayal, or violating institutions (medicine, law, trust). Which is good if you want a moral conversation partner that won’t go full psycho. But it also means it’s <em>not neutral</em>: it nudges you toward certain “acceptable” boundaries, and it’ll often try to find a “third way” (donate, support workers, explain, mitigate) rather than letting you sit in the uncomfortable binary.<br><br></p>
 <section id="thank-you-for-reading" class="level2">
 <h2 class="anchored" data-anchor-id="thank-you-for-reading">Thank you for reading</h2>
 
 
 </section>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
